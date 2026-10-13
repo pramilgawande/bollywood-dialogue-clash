@@ -1,0 +1,3573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmi Dialogue Dhamaka - The Bollywood Dialogue Clash</title>
+  <style>
+/* ==========================================================================
+   BOLLYWOOD DIALOGUE DHAMAKA - THEATRICAL RETRO-MODERN CINEMA STYLES
+   ========================================================================== */
+
+:root {
+  --gold-primary: #f59e0b;
+  --gold-glow: #fbbf24;
+  --gold-dark: #b45309;
+  --cinema-red: #dc2626;
+  --cinema-darkred: #991b1b;
+  --bg-cinema: #09090b;
+  --card-bg: rgba(24, 24, 27, 0.88);
+  --border-gold: rgba(245, 158, 11, 0.35);
+  --neon-blue: #38bdf8;
+  --villain-purple: #9333ea;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: var(--bg-cinema);
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(220, 38, 38, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(147, 51, 234, 0.12) 0%, transparent 40%);
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================= THEATRE MARQUEE LIGHTS HEADER ================= */
+.marquee-border {
+  background: repeating-linear-gradient(
+    90deg,
+    #fbbf24 0px,
+    #fbbf24 10px,
+    #18181b 10px,
+    #18181b 24px
+  );
+  height: 6px;
+  width: 100%;
+  box-shadow: 0 0 12px rgba(251, 191, 36, 0.8);
+  animation: marqueePulse 2s infinite alternate;
+}
+
+@keyframes marqueePulse {
+  0% { opacity: 0.7; filter: drop-shadow(0 0 4px #fbbf24); }
+  100% { opacity: 1; filter: drop-shadow(0 0 12px #fbbf24); }
+}
+
+/* App Header */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: rgba(15, 15, 20, 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-gold);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.brand-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.brand-clapper {
+  font-size: 28px;
+  animation: clapperWiggle 4s ease-in-out infinite;
+}
+
+@keyframes clapperWiggle {
+  0%, 90%, 100% { transform: rotate(0deg); }
+  92% { transform: rotate(-12deg); }
+  95% { transform: rotate(8deg); }
+  97% { transform: rotate(-5deg); }
+}
+
+.brand-title {
+  font-size: 1.35rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #fbbf24, #f59e0b, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+}
+
+.brand-tag {
+  font-size: 0.65rem;
+  background: rgba(220, 38, 38, 0.25);
+  border: 1px solid rgba(220, 38, 38, 0.6);
+  color: #fca5a5;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* Sound & Control Bar in Header */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-icon {
+  background: rgba(39, 39, 42, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f8fafc;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 18px;
+}
+
+.btn-icon:hover {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: var(--gold-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+.bgm-select {
+  background: rgba(24, 24, 27, 0.95);
+  border: 1px solid var(--border-gold);
+  color: #fef08a;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Main Container */
+.main-stage {
+  flex: 1;
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Projector Cone Visual */
+.projector-glow {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 250px;
+  background: radial-gradient(ellipse at top, rgba(251, 191, 36, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ================= LOBBY & HERO BANNER ================= */
+.lobby-view {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-billboard {
+  background: linear-gradient(145deg, rgba(30, 27, 75, 0.7), rgba(24, 24, 27, 0.95)),
+              radial-gradient(circle at 10% 20%, rgba(220, 38, 38, 0.3), transparent 40%);
+  border: 2px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 32px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(245, 158, 11, 0.1);
+}
+
+.billboard-tag {
+  display: inline-block;
+  background: linear-gradient(90deg, #b45309, #d97706);
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+  letter-spacing: 1.5px;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+}
+
+.billboard-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+
+.billboard-title .accent-text {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24, #ef4444);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.billboard-subtitle {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 24px;
+  line-height: 1.5;
+}
+
+/* Stats / Records Strip */
+.stats-strip {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.stat-pill {
+  background: rgba(15, 15, 20, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+}
+
+.stat-pill strong {
+  color: var(--gold-glow);
+  font-size: 1.05rem;
+}
+
+/* Mode Selection Cards Grid */
+.modes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.mode-card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mode-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.mode-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold-primary);
+  box-shadow: 0 12px 30px rgba(245, 158, 11, 0.2);
+}
+
+.mode-card:hover::before {
+  opacity: 1;
+}
+
+.mode-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.mode-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.mode-card h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.mode-card p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.45;
+  margin-bottom: 20px;
+}
+
+.btn-play-mode {
+  width: 100%;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(245, 158, 11, 0.05));
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+  color: var(--gold-glow);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.mode-card:hover .btn-play-mode {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-primary));
+  color: #000;
+  border-color: var(--gold-glow);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+/* Era Picker Row */
+.era-pills-row {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 4px 2px;
+  margin-bottom: 12px;
+  scrollbar-width: none;
+}
+
+.era-pill {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.era-pill.active {
+  background: linear-gradient(135deg, #b45309, #d97706);
+  border-color: #f59e0b;
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+}
+
+/* ================= GAMEPLAY ARENA ================= */
+.game-view {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 10;
+}
+
+/* In-game HUD */
+.hud-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(24, 24, 27, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hud-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.hud-value {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #fff;
+}
+
+.hud-boxoffice {
+  color: var(--gold-glow);
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+}
+
+/* Seeti (Combo) Meter */
+.seeti-meter-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.seeti-flame {
+  font-size: 20px;
+  filter: grayscale(1);
+  transition: all 0.3s;
+}
+
+.seeti-flame.active {
+  filter: grayscale(0) drop-shadow(0 0 8px #f59e0b);
+  animation: flameBounce 0.6s infinite alternate;
+}
+
+@keyframes flameBounce {
+  from { transform: scale(1); }
+  to { transform: scale(1.25); }
+}
+
+.seeti-bars {
+  display: flex;
+  gap: 4px;
+}
+
+.seeti-step {
+  width: 12px;
+  height: 22px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.25s;
+}
+
+.seeti-step.filled {
+  background: linear-gradient(to top, #d97706, #fbbf24);
+  box-shadow: 0 0 8px #fbbf24;
+}
+
+.combo-badge {
+  font-size: 0.75rem;
+  background: #dc2626;
+  color: #fff;
+  font-weight: 900;
+  padding: 2px 6px;
+  border-radius: 6px;
+  display: none;
+}
+
+.combo-badge.show {
+  display: inline-block;
+  animation: pulseCombo 0.8s infinite;
+}
+
+@keyframes pulseCombo {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+/* Timer Badge for Rapid Fire */
+.timer-dial {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(220, 38, 38, 0.2);
+  border: 1px solid rgba(220, 38, 38, 0.6);
+  color: #f87171;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+/* Main Cinematic Dialogue Card */
+.theatre-card {
+  background: linear-gradient(160deg, rgba(30, 27, 75, 0.65), rgba(24, 24, 27, 0.95)),
+              radial-gradient(circle at top right, rgba(245, 158, 11, 0.15), transparent 60%);
+  border: 2px solid var(--border-gold);
+  border-radius: 20px;
+  padding: 30px 24px 24px;
+  position: relative;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.role-badge {
+  position: absolute;
+  top: -14px;
+  background: linear-gradient(90deg, #b45309, #d97706);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 9999px;
+  letter-spacing: 1px;
+  border: 1px solid #fbbf24;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.role-badge.villain {
+  background: linear-gradient(90deg, #581c87, #7e22ce);
+  border-color: #c084fc;
+}
+
+.role-badge.comic {
+  background: linear-gradient(90deg, #047857, #059669);
+  border-color: #34d399;
+}
+
+/* Dialogue Speech Text */
+.quote-container {
+  width: 100%;
+  margin: 16px 0 20px;
+}
+
+.quote-open-mark {
+  font-size: 3rem;
+  color: rgba(245, 158, 11, 0.3);
+  line-height: 0;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.quote-english {
+  font-size: clamp(1.3rem, 3.5vw, 1.95rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.quote-hindi {
+  font-size: clamp(1.1rem, 2.8vw, 1.45rem);
+  color: #fbbf24;
+  font-weight: 600;
+  line-height: 1.4;
+  opacity: 0.95;
+}
+
+/* Audio Wave Visualizer & Listen Dialogue Button */
+.audio-action-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-listen-dialogue {
+  background: linear-gradient(135deg, #18181b, #27272a);
+  border: 1px solid var(--border-gold);
+  color: #fbbf24;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 8px 18px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-listen-dialogue:hover {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: var(--gold-glow);
+  transform: scale(1.04);
+}
+
+.btn-listen-dialogue.speaking {
+  background: linear-gradient(135deg, #b45309, #d97706);
+  color: #fff;
+  border-color: #fbbf24;
+  box-shadow: 0 0 18px rgba(251, 191, 36, 0.6);
+}
+
+/* Waveform Bars Animation */
+.visualizer-bars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 22px;
+}
+
+.v-bar {
+  width: 3px;
+  height: 6px;
+  background: #fbbf24;
+  border-radius: 2px;
+  transition: height 0.1s ease;
+}
+
+.speaking .v-bar:nth-child(1) { animation: soundWave 0.5s infinite alternate; }
+.speaking .v-bar:nth-child(2) { animation: soundWave 0.7s infinite alternate 0.1s; }
+.speaking .v-bar:nth-child(3) { animation: soundWave 0.4s infinite alternate 0.2s; }
+.speaking .v-bar:nth-child(4) { animation: soundWave 0.6s infinite alternate 0.15s; }
+.speaking .v-bar:nth-child(5) { animation: soundWave 0.8s infinite alternate 0.05s; }
+
+@keyframes soundWave {
+  from { height: 4px; }
+  to { height: 20px; }
+}
+
+/* Blind Mode Mask */
+.blind-mask {
+  filter: blur(10px);
+  user-select: none;
+  transition: filter 0.4s;
+}
+
+.blind-mask.revealed {
+  filter: blur(0);
+}
+
+/* Lifelines Bar */
+.lifelines-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.btn-lifeline {
+  background: rgba(24, 24, 27, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #cbd5e1;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-lifeline:hover:not(:disabled) {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--gold-primary);
+  color: #fff;
+}
+
+.btn-lifeline:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+/* Options 4-Grid */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.option-btn {
+  background: rgba(24, 24, 27, 0.95);
+  border: 1.5px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 16px 18px;
+  color: #f8fafc;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+}
+
+.option-letter {
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: var(--gold-glow);
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: var(--gold-primary);
+  background: rgba(39, 39, 42, 0.95);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 158, 11, 0.25);
+}
+
+.option-btn:hover:not(:disabled) .option-letter {
+  background: var(--gold-primary);
+  color: #000;
+}
+
+.option-btn.correct {
+  background: linear-gradient(135deg, rgba(22, 101, 52, 0.9), rgba(21, 128, 61, 0.95)) !important;
+  border-color: #4ade80 !important;
+  color: #ffffff !important;
+  animation: correctPulse 0.4s ease;
+}
+
+.option-btn.wrong {
+  background: linear-gradient(135deg, rgba(127, 29, 29, 0.9), rgba(153, 27, 27, 0.95)) !important;
+  border-color: #f87171 !important;
+  color: #ffffff !important;
+  animation: shakeWrong 0.45s ease;
+}
+
+.option-btn.eliminated {
+  opacity: 0.25;
+  pointer-events: none;
+  filter: grayscale(1);
+}
+
+@keyframes correctPulse {
+  0% { transform: scale(0.98); }
+  50% { transform: scale(1.04); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shakeWrong {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+/* ================= TRIVIA POPUP & NEXT ACTION ================= */
+.trivia-drawer {
+  background: rgba(24, 24, 27, 0.95);
+  border: 1px solid var(--border-gold);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.trivia-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.trivia-actor {
+  font-weight: 800;
+  color: var(--gold-glow);
+  font-size: 0.95rem;
+}
+
+.trivia-movie {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+}
+
+.trivia-fact {
+  color: #e2e8f0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 8px 12px;
+  border-radius: 8px;
+  border-left: 3px solid var(--gold-primary);
+}
+
+.btn-next-scene {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-primary));
+  border: none;
+  color: #000;
+  font-weight: 900;
+  font-size: 1rem;
+  padding: 12px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+  transition: all 0.2s;
+  margin-top: 4px;
+}
+
+.btn-next-scene:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.6);
+}
+
+/* ================= SOUNDBOARD MODAL / VIEW ================= */
+.soundboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.soundboard-pad {
+  background: rgba(24, 24, 27, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  height: 120px;
+}
+
+.soundboard-pad:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: var(--gold-primary);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+.pad-name {
+  font-weight: 900;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.pad-movie {
+  font-size: 0.75rem;
+  color: var(--gold-glow);
+}
+
+.pad-punchline {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.3;
+  margin-top: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* ================= SCORECARD / BOX OFFICE CERTIFICATE ================= */
+.gameover-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.scorecard-poster {
+  background: linear-gradient(150deg, #18181b 0%, #09090b 100%);
+  border: 3px solid var(--gold-primary);
+  border-radius: 20px;
+  max-width: 500px;
+  width: 100%;
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: 0 0 50px rgba(245, 158, 11, 0.35);
+  position: relative;
+  overflow: hidden;
+}
+
+.scorecard-header-lights {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: repeating-linear-gradient(90deg, #fbbf24 0, #fbbf24 8px, #18181b 8px, #18181b 16px);
+}
+
+.verdict-stamp {
+  display: inline-block;
+  padding: 8px 24px;
+  border: 3px solid #dc2626;
+  border-radius: 8px;
+  color: #ef4444;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transform: rotate(-6deg);
+  margin-bottom: 16px;
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.4);
+}
+
+.verdict-stamp.hit {
+  border-color: #22c55e;
+  color: #22c55e;
+  box-shadow: 0 0 15px rgba(34, 197, 94, 0.4);
+}
+
+.verdict-stamp.blockbuster {
+  border-color: #f59e0b;
+  color: #fbbf24;
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.7);
+}
+
+.player-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.player-subtitle {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 20px;
+}
+
+.scorecard-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.scorecard-stat-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 8px;
+  border-radius: 12px;
+}
+
+.scorecard-stat-box .val {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--gold-glow);
+}
+
+.scorecard-stat-box .lbl {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.scorecard-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn-share {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  border: none;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-play-again {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold-primary));
+  border: none;
+  color: #000;
+  font-weight: 900;
+  font-size: 0.95rem;
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+/* Canvas confetti layer */
+#confettiCanvas {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99;
+}
+
+</style>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+</head>
+<body>
+  <!-- Marquee Bulb Accent Line -->
+  <div class="marquee-border"></div>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="brand-container" id="brandLogo">
+      <span class="brand-clapper">🎬</span>
+      <div>
+        <div class="brand-title">Filmi Dialogue Dhamaka</div>
+      </div>
+      <span class="brand-tag">HERO VS VILLAIN</span>
+    </div>
+
+    <!-- Live Audio & Navigation Controls -->
+    <div class="header-controls">
+      <!-- BGM Selector -->
+      <select class="bgm-select" id="bgmSelect" title="Select Bollywood Background Music">
+        <option value="masala">🥁 Masala Dholak</option>
+        <option value="retro">📻 70s Retro Funk</option>
+        <option value="romance">🎸 DDLJ Mandolin</option>
+        <option value="villain">⚡ Villain March</option>
+      </select>
+
+      <!-- Music Toggle -->
+      <button class="btn-icon" id="btnToggleMusic" title="Toggle Background Music">
+        🎶
+      </button>
+
+      <!-- SFX Toggle -->
+      <button class="btn-icon" id="btnMuteSfx" title="Toggle Sound Effects">
+        🔊
+      </button>
+
+      <!-- Soundboard Direct Button -->
+      <button class="btn-icon" id="btnHeaderSoundboard" title="Open Bollywood Soundboard">
+        📻
+      </button>
+    </div>
+  </header>
+
+  <!-- Canvas for Confetti & Special FX -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Cinema Projector Glow Effect -->
+  <div class="projector-glow"></div>
+
+  <!-- Main Game Stage (Dynamic Screens Rendered via game.js) -->
+  <main class="main-stage" id="mainStage">
+    <!-- Populated by game.js: Lobby / Quiz / Soundboard / Certificate -->
+  </main>
+
+  <!-- Modular Scripts -->
+  <script>
+
+// === DIALOGUE DATA ===
+// ============================================================================
+// BOLLYWOOD ICONIC DIALOGUE DATABASE (50+ LEGENDARY QUOTES)
+// Eras: 70s-80s Classics, 90s Golden Era, 2000s Masala, Modern Mass Blockbusters
+// ============================================================================
+
+const DIALOGUES = [
+  // ================= 70s-80s CLASSICS =================
+  {
+    id: "sholay-gabbar-kitne",
+    quoteEn: "Kitne aadmi the?",
+    quoteHi: "कितने आदमी थे?",
+    movie: "Sholay",
+    year: 1975,
+    character: "Gabbar Singh",
+    actor: "Amjad Khan",
+    role: "Villain",
+    era: "70s-80s",
+    hint: "Ramesh Sippy's legendary curry-western featuring Ramgarh and Thakur.",
+    funFact: "Danny Denzongpa was originally offered the role of Gabbar Singh before Amjad Khan immortalized it.",
+    audioTone: { pitch: 0.65, rate: 0.82, voiceStyle: "menacing-villain" },
+    iconBg: "linear-gradient(135deg, #78350f, #b45309)",
+    options: ["Sholay", "Deewaar", "Zanjeer", "Kaalia"],
+    correctAnswer: "Sholay",
+    questionType: "movie"
+  },
+  {
+    id: "sholay-gabbar-dar",
+    quoteEn: "Jo darr gaya... samjho marr gaya!",
+    quoteHi: "जो डर गया... समझो मर गया!",
+    movie: "Sholay",
+    year: 1975,
+    character: "Gabbar Singh",
+    actor: "Amjad Khan",
+    role: "Villain",
+    era: "70s-80s",
+    hint: "Spoken on the rocky hills of Ramgarh with a belt dragging on the rocks.",
+    funFact: "Amjad Khan rehearsed this famous scene while pacing barefoot on the hot rocks of Ramanagara, Karnataka.",
+    audioTone: { pitch: 0.7, rate: 0.85, voiceStyle: "menacing-villain" },
+    iconBg: "linear-gradient(135deg, #78350f, #991b1b)",
+    options: ["Sholay", "Don", "Krantiveer", "Agneepath"],
+    correctAnswer: "Sholay",
+    questionType: "movie"
+  },
+  {
+    id: "deewaar-shashi-maa",
+    quoteEn: "Mere paas maa hai!",
+    quoteHi: "मेरे पास माँ है!",
+    movie: "Deewaar",
+    year: 1975,
+    character: "Ravi Verma",
+    actor: "Shashi Kapoor",
+    role: "Hero",
+    era: "70s-80s",
+    hint: "The legendary retort to Amitabh's boast about cars, bungalows, and bank balance under the bridge.",
+    funFact: "Written by Salim-Javed, this four-word response is widely considered the most quoted punchline in Indian cinema history.",
+    audioTone: { pitch: 1.05, rate: 0.95, voiceStyle: "heroic-calm" },
+    iconBg: "linear-gradient(135deg, #1e3a8a, #3b82f6)",
+    options: ["Deewaar", "Trishul", "Muqaddar Ka Sikandar", "Roti Kapda Aur Makaan"],
+    correctAnswer: "Deewaar",
+    questionType: "movie"
+  },
+  {
+    id: "deewaar-amitabh-feinke",
+    quoteEn: "Aaj bhi main phenke hue paise nahi uthata!",
+    quoteHi: "आज भी मैं फेंके हुए पैसे नहीं उठाता!",
+    movie: "Deewaar",
+    year: 1975,
+    character: "Vijay Verma",
+    actor: "Amitabh Bachchan",
+    role: "Hero",
+    era: "70s-80s",
+    hint: "Vijay as a young boot-polish boy and later as a dock worker refuses charity.",
+    funFact: "The dialogue established the pinnacle of Amitabh's 'Angry Young Man' persona written by Salim-Javed.",
+    audioTone: { pitch: 0.75, rate: 0.88, voiceStyle: "angry-baritone" },
+    iconBg: "linear-gradient(135deg, #312e81, #4338ca)",
+    options: ["Deewaar", "Zanjeer", "Kaalia", "Kala Patthar"],
+    correctAnswer: "Deewaar",
+    questionType: "movie"
+  },
+  {
+    id: "don-amitabh-gyarah",
+    quoteEn: "Don ko pakadna mushkil hi nahi... namumkin hai!",
+    quoteHi: "डॉन को पकड़ना मुश्किल ही नहीं... नामुमकिन है!",
+    movie: "Don",
+    year: 1978,
+    character: "Don",
+    actor: "Amitabh Bachchan",
+    role: "Hero",
+    era: "70s-80s",
+    hint: "11 countries' police forces are hunting this mastermind.",
+    funFact: "Amitabh Bachchan won the Filmfare Best Actor Award for his dual role as Don and Vijay in this 1978 blockbuster.",
+    audioTone: { pitch: 0.8, rate: 0.92, voiceStyle: "suave-swag" },
+    iconBg: "linear-gradient(135deg, #0f172a, #1e293b)",
+    options: ["Don", "Shahenshah", "The Great Gambler", "Shaan"],
+    correctAnswer: "Don",
+    questionType: "movie"
+  },
+  {
+    id: "mr-india-mogambo",
+    quoteEn: "Mogambo khush hua!",
+    quoteHi: "मोगैम्बो खुश हुआ!",
+    movie: "Mr. India",
+    year: 1987,
+    character: "Mogambo",
+    actor: "Amrish Puri",
+    role: "Villain",
+    era: "70s-80s",
+    hint: "An iconic villain in a golden embroidered tunic with missile control switches.",
+    funFact: "Amrish Puri's character Mogambo was designed by Shekhar Kapur with exaggerated comic-book villain flair.",
+    audioTone: { pitch: 0.65, rate: 0.8, voiceStyle: "evil-booming" },
+    iconBg: "linear-gradient(135deg, #831843, #be185d)",
+    options: ["Mr. India", "Nagina", "Ajooba", "Tahalka"],
+    correctAnswer: "Mr. India",
+    questionType: "movie"
+  },
+  {
+    id: "shahenshah-rishte",
+    quoteEn: "Rishtey mein toh hum tumhare baap lagte hain... naam hai Shahenshah!",
+    quoteHi: "रिश्ते में तो हम तुम्हारे बाप लगते हैं... नाम है शहंशाह!",
+    movie: "Shahenshah",
+    year: 1988,
+    character: "Shahenshah",
+    actor: "Amitabh Bachchan",
+    role: "Hero",
+    era: "70s-80s",
+    hint: "A vigilante wearing an iron-chain sleeve and a leather jacket battling crime.",
+    funFact: "The screenplay was conceived by Jaya Bachchan, and the film saw unprecedented advance bookings.",
+    audioTone: { pitch: 0.72, rate: 0.85, voiceStyle: "angry-baritone" },
+    iconBg: "linear-gradient(135deg, #1e1b4b, #312e81)",
+    options: ["Shahenshah", "Mard", "Coolie", "Toofan"],
+    correctAnswer: "Shahenshah",
+    questionType: "movie"
+  },
+  {
+    id: "kaalia-jahan-khade",
+    quoteEn: "Hum jahan khade hote hain, line wahin se shuru hoti hai!",
+    quoteHi: "हम जहाँ खड़े होते हैं, लाइन वहीं से शुरू होती है!",
+    movie: "Kaalia",
+    year: 1981,
+    character: "Kaalia",
+    actor: "Amitabh Bachchan",
+    role: "Hero",
+    era: "70s-80s",
+    hint: "Amitabh in a prison line delivering this cocky one-liner to Bob Christo.",
+    funFact: "Directed by Tinnu Anand, this line became an anthem of Indian street swagger.",
+    audioTone: { pitch: 0.78, rate: 0.9, voiceStyle: "swag-baritone" },
+    iconBg: "linear-gradient(135deg, #1c1917, #44403c)",
+    options: ["Kaalia", "Geraftaar", "Andhaa Kaanoon", "Naseeb"],
+    correctAnswer: "Kaalia",
+    questionType: "movie"
+  },
+  {
+    id: "shaan-shakaal",
+    quoteEn: "Yeh Shakaal ki aakashwani hai!",
+    quoteHi: "यह शाकाल की आकाशवाणी है!",
+    movie: "Shaan",
+    year: 1980,
+    character: "Shakaal",
+    actor: "Kulbhushan Kharbanda",
+    role: "Villain",
+    era: "70s-80s",
+    hint: "Bald villain on a private island with shark tanks and rotating trapdoors.",
+    funFact: "Shakaal's island lair was inspired by James Bond villain Ernst Stavro Blofeld.",
+    audioTone: { pitch: 0.7, rate: 0.82, voiceStyle: "chill-villain" },
+    iconBg: "linear-gradient(135deg, #0c4a6e, #0284c7)",
+    options: ["Shaan", "Karz", "Trishul", "Kranti"],
+    correctAnswer: "Shaan",
+    questionType: "movie"
+  },
+  {
+    id: "kalicharan-shatrughan",
+    quoteEn: "Khamosh!",
+    quoteHi: "खामोश!",
+    movie: "Kalicharan",
+    year: 1976,
+    character: "Kalicharan",
+    actor: "Shatrughan Sinha",
+    role: "Hero",
+    era: "70s-80s",
+    hint: "A single thunderous one-word roar that defined 'Shotgun' Sinha's lifelong trademark.",
+    funFact: "Shatrughan Sinha's delivery was so impactful that politicians and fans still chant it at his public rallies.",
+    audioTone: { pitch: 0.65, rate: 0.75, voiceStyle: "shout-command" },
+    iconBg: "linear-gradient(135deg, #701a75, #a21caf)",
+    options: ["Kalicharan", "Vishwanath", "Jaani Dushman", "Dostana"],
+    correctAnswer: "Kalicharan",
+    questionType: "movie"
+  },
+  {
+    id: "waqt-raajkumar-sheeshe",
+    quoteEn: "Chheeney hue taaj zyada der tak sar par nahi rehte... Jinke apne ghar sheeshe ke hon, woh doosron par patthar nahi phenka karte!",
+    quoteHi: "जिनके अपने घर शीशे के हों, वो दूसरों पर पत्थर नहीं फेंका करते!",
+    movie: "Waqt",
+    year: 1965,
+    character: "Raja",
+    actor: "Raaj Kumar",
+    role: "Hero",
+    era: "70s-80s",
+    hint: "Raaj Kumar's legendary aristocrat dialogue warning Chinoy Seth.",
+    funFact: "Raaj Kumar's distinct pause and aristocratic diction made this one of Indian cinema's most parodied yet respected styles.",
+    audioTone: { pitch: 0.82, rate: 0.8, voiceStyle: "royal-poetic" },
+    iconBg: "linear-gradient(135deg, #365314, #4d7c0f)",
+    options: ["Waqt", "Pakeezah", "Tirangaa", "Saudagar"],
+    correctAnswer: "Waqt",
+    questionType: "movie"
+  },
+  {
+    id: "agneepath-vijay-dinanath",
+    quoteEn: "Naam: Vijay Dinanath Chauhan. Poora naam. Baap ka naam: Dinanath Chauhan. Maa ka naam: Suhasini Chauhan. Gaon: Mandwa.",
+    quoteHi: "नाम: विजय दीनानाथ चौहान। पूरा नाम। बाप का नाम: दीनानाथ चौहान। माँ का नाम: सुहासिनी चौहान। गाँव: मांडवा।",
+    movie: "Agneepath",
+    year: 1990,
+    character: "Vijay Dinanath Chauhan",
+    actor: "Amitabh Bachchan",
+    role: "Hero",
+    era: "70s-80s",
+    hint: "Spoken in an iconic husky voice across an interrogation table to police officers.",
+    funFact: "Amitabh adopted a deep, gravelly voice inspired by Marlon Brando in The Godfather, earning him the National Film Award.",
+    audioTone: { pitch: 0.6, rate: 0.78, voiceStyle: "gravel-mafia" },
+    iconBg: "linear-gradient(135deg, #451a03, #78350f)",
+    options: ["Agneepath", "Hum", "Akayla", "Khuda Gawah"],
+    correctAnswer: "Agneepath",
+    questionType: "movie"
+  },
+
+  // ================= 90s GOLDEN ERA =================
+  {
+    id: "ddlj-bade-bade-deshon",
+    quoteEn: "Bade bade deshon mein aisi choti choti baatein hoti rehti hain, Senorita!",
+    quoteHi: "बड़े बड़े देशों में ऐसी छोटी छोटी बातें होती रहती हैं, सेनोरिटा!",
+    movie: "Dilwale Dulhania Le Jayenge",
+    year: 1995,
+    character: "Raj Malhotra",
+    actor: "Shah Rukh Khan",
+    role: "Hero",
+    era: "90s",
+    hint: "Raj charming Simran in a train compartment across Switzerland.",
+    funFact: "DDLJ has been running continuously at Mumbai's Maratha Mandir theatre for over 28 consecutive years!",
+    audioTone: { pitch: 1.0, rate: 0.95, voiceStyle: "romantic-charm" },
+    iconBg: "linear-gradient(135deg, #dc2626, #f97316)",
+    options: ["Dilwale Dulhania Le Jayenge", "Kuch Kuch Hota Hai", "Mohabbatein", "Dil To Pagal Hai"],
+    correctAnswer: "Dilwale Dulhania Le Jayenge",
+    questionType: "movie"
+  },
+  {
+    id: "baazigar-haar-kar",
+    quoteEn: "Kabhi kabhi jeetne ke liye kuch haarna bhi padta hai... aur haar kar jeetne wale ko Baazigar kehte hain!",
+    quoteHi: "कभी कभी जीतने के लिए कुछ हारना भी पड़ता है... और हार कर जीतने वाले को बाज़ीगर कहते हैं!",
+    movie: "Baazigar",
+    year: 1993,
+    character: "Ajay Sharma",
+    actor: "Shah Rukh Khan",
+    role: "Hero",
+    era: "90s",
+    hint: "SRK playing the ultimate anti-hero seeking revenge with race car and contact lenses.",
+    funFact: "Both Salman Khan and Anil Kapoor turned down Baazigar before Shah Rukh Khan seized the breakthrough anti-hero role.",
+    audioTone: { pitch: 0.88, rate: 0.9, voiceStyle: "dramatic-intense" },
+    iconBg: "linear-gradient(135deg, #1e1b4b, #4338ca)",
+    options: ["Baazigar", "Darr", "Anjaam", "Karan Arjun"],
+    correctAnswer: "Baazigar",
+    questionType: "movie"
+  },
+  {
+    id: "damini-tareekh",
+    quoteEn: "Taareekh pe taareekh, taareekh pe taareekh milti rahi hai... lekin insaaf nahi mila my lord, mili hai toh sirf yeh taareekh!",
+    quoteHi: "तारीख़ पे तारीख़, तारीख़ पे तारीख़ मिलती रही है... लेकिन इंसाफ़ नहीं मिला माय लॉर्ड, मिली है तो सिर्फ़ ये तारीख़!",
+    movie: "Damini",
+    year: 1993,
+    character: "Advocate Govind",
+    actor: "Sunny Deol",
+    role: "Hero",
+    era: "90s",
+    hint: "A fiery courtroom monologue defending justice with papers flying.",
+    funFact: "Sunny Deol won the National Film Award for Best Supporting Actor for Damini despite only appearing after the interval.",
+    audioTone: { pitch: 0.8, rate: 0.88, voiceStyle: "sunny-roar" },
+    iconBg: "linear-gradient(135deg, #991b1b, #b91c1c)",
+    options: ["Damini", "Ghatak", "Ghayal", "Jeet"],
+    correctAnswer: "Damini",
+    questionType: "movie"
+  },
+  {
+    id: "damini-dhai-kilo",
+    quoteEn: "Yeh dhai kilo ka haath jab kisi pe padta hai na, toh aadmi uthta nahi... uth jaata hai!",
+    quoteHi: "ये ढाई किलो का हाथ जब किसी पे पड़ता है ना, तो आदमी उठता नहीं... उठ जाता है!",
+    movie: "Damini",
+    year: 1993,
+    character: "Govind",
+    actor: "Sunny Deol",
+    role: "Hero",
+    era: "90s",
+    hint: "Sunny Deol confronting corrupt lawyer Chhadha (Amrish Puri).",
+    funFact: "The 'Dhai Kilo Ka Haath' dialogue remains the highest viral meme and pop-culture reference for Sunny Deol's raw power.",
+    audioTone: { pitch: 0.78, rate: 0.85, voiceStyle: "sunny-roar" },
+    iconBg: "linear-gradient(135deg, #7f1d1d, #991b1b)",
+    options: ["Damini", "Ghayal", "Gadar: Ek Prem Katha", "Ziddi"],
+    correctAnswer: "Damini",
+    questionType: "movie"
+  },
+  {
+    id: "darr-kiran",
+    quoteEn: "I love you, K-k-k-kiran!",
+    quoteHi: "आई लव यू, क-क-क-किरन!",
+    movie: "Darr",
+    year: 1993,
+    character: "Rahul Mehra",
+    actor: "Shah Rukh Khan",
+    role: "Villain",
+    era: "90s",
+    hint: "An obsessive lover with a psychotic stutter calling over a red telephone.",
+    funFact: "Yash Chopra had originally cast Shah Rukh after Ajay Devgn and Aamir Khan refused to play a psychopathic stalker.",
+    audioTone: { pitch: 0.95, rate: 0.9, voiceStyle: "creepy-stutter" },
+    iconBg: "linear-gradient(135deg, #4c0519, #881337)",
+    options: ["Darr", "Baazigar", "Anjaam", "Deewana"],
+    correctAnswer: "Darr",
+    questionType: "movie"
+  },
+  {
+    id: "andaz-apna-apna-crime-master",
+    quoteEn: "Aankhein nikaal kar gotiyan khelunga gotiyan!",
+    quoteHi: "आँखें निकाल कर गोटियाँ खेलूँगा गोटियाँ!",
+    movie: "Andaz Apna Apna",
+    year: 1994,
+    character: "Crime Master Gogo",
+    actor: "Shakti Kapoor",
+    role: "Comic Legend",
+    era: "90s",
+    hint: "A villain in a black superhero cape who claims to be Mogambo's nephew: 'Aaya hoon toh kuch toh loot kar jaunga!'",
+    funFact: "Though a commercial average earner upon initial release, Andaz Apna Apna is now revered as a top cult classic comedy.",
+    audioTone: { pitch: 1.15, rate: 1.05, voiceStyle: "comic-villain" },
+    iconBg: "linear-gradient(135deg, #047857, #10b981)",
+    options: ["Andaz Apna Apna", "Judwaa", "Raja Babu", "Hero No. 1"],
+    correctAnswer: "Andaz Apna Apna",
+    questionType: "movie"
+  },
+  {
+    id: "karan-arjun-rakhee",
+    quoteEn: "Mere Karan Arjun aayenge... mere bete aayenge!",
+    quoteHi: "मेरे करन अर्जुन आएँगे... मेरे बेटे आएँगे!",
+    movie: "Karan Arjun",
+    year: 1995,
+    character: "Durga Singh",
+    actor: "Rakhee Gulzar",
+    role: "Supporting",
+    era: "90s",
+    hint: "A grieving mother waiting at the temple for reincarnated sons Shah Rukh and Salman.",
+    funFact: "Directed by Rakesh Roshan, this reincarnation drama became the 2nd highest grossing Indian film of 1995.",
+    audioTone: { pitch: 0.9, rate: 0.85, voiceStyle: "hopeful-dramatic" },
+    iconBg: "linear-gradient(135deg, #7c2d12, #c2410c)",
+    options: ["Karan Arjun", "Ram Lakhan", "Koyla", "Jeet"],
+    correctAnswer: "Karan Arjun",
+    questionType: "movie"
+  },
+  {
+    id: "krantiveer-nana-khoon",
+    quoteEn: "Yeh Musalman ka khoon, yeh Hindu ka khoon... bata ismein kaunsa Musalman ka hai, kaunsa Hindu ka?",
+    quoteHi: "ये मुसलमान का ख़ून, ये हिंदू का ख़ून... बता इसमें कौन सा मुसलमान का है, कौन सा हिंदू का?",
+    movie: "Krantiveer",
+    year: 1994,
+    character: "Pratap Narayan Tilak",
+    actor: "Nana Patekar",
+    role: "Hero",
+    era: "90s",
+    hint: "Pratap cuts both hands to show identical blood during a communal riot speech.",
+    funFact: "Nana Patekar swept both the National Film Award and Filmfare Award for Best Actor for this electrifying performance.",
+    audioTone: { pitch: 0.85, rate: 0.92, voiceStyle: "nana-intense" },
+    iconBg: "linear-gradient(135deg, #581c87, #7e22ce)",
+    options: ["Krantiveer", "Tirangaa", "Ghulam-E-Mustafa", "Prahaar"],
+    correctAnswer: "Krantiveer",
+    questionType: "movie"
+  },
+  {
+    id: "tirangaa-raajkumar-fuse",
+    quoteEn: "Na talwaar ki dhaar se, na goliyon ki bauchaar se... banda darta hai toh sirf parvardigaar se!",
+    quoteHi: "ना तलवार की धार से, ना गोलियों की बौछार से... बंदा डरता है तो सिर्फ़ परवरदिगार से!",
+    movie: "Tirangaa",
+    year: 1992,
+    character: "Brigadier Suryadev Singh",
+    actor: "Raaj Kumar",
+    role: "Hero",
+    era: "90s",
+    hint: "Brigadier Suryadev Singh with his walking stick smoking cigars and teaming up with Shivajirao Wagle.",
+    funFact: "Director Mehul Kumar famously managed the volatile egos of Raaj Kumar and Nana Patekar on set with perfection.",
+    audioTone: { pitch: 0.8, rate: 0.82, voiceStyle: "royal-poetic" },
+    iconBg: "linear-gradient(135deg, #134e4a, #0d9488)",
+    options: ["Tirangaa", "Saudagar", "Police Public", "Kshatriya"],
+    correctAnswer: "Tirangaa",
+    questionType: "movie"
+  },
+  {
+    id: "hum-apke-hain-koun-prem",
+    quoteEn: "Dosti ka ek usool hai madam: No sorry, no thank you!",
+    quoteHi: "दोस्ती का एक उसूल है मैडम: नो सॉरी, नो थैंक यू!",
+    movie: "Maine Pyar Kiya",
+    year: 1989,
+    character: "Prem",
+    actor: "Salman Khan",
+    role: "Hero",
+    era: "90s",
+    hint: "Prem presenting a cap with the word 'FRIEND' embroidered on it to Suman (Bhagyashree).",
+    funFact: "This dialogue sparked a major fashion trend in India where thousands of teens bought caps labeled 'FRIEND'.",
+    audioTone: { pitch: 0.95, rate: 0.95, voiceStyle: "youth-charm" },
+    iconBg: "linear-gradient(135deg, #0284c7, #38bdf8)",
+    options: ["Maine Pyar Kiya", "Hum Aapke Hain Koun..!", "Hum Saath-Saath Hain", "Saajan"],
+    correctAnswer: "Maine Pyar Kiya",
+    questionType: "movie"
+  },
+  {
+    id: "kuch-kuch-hota-hai-rahul",
+    quoteEn: "Pyar dosti hai... agar woh meri sabse achhi dost nahi ban sakti, toh main usse kabhi pyar kar hi nahi sakta!",
+    quoteHi: "प्यार दोस्ती है... अगर वो मेरी सबसे अच्छी दोस्त नहीं बन सकती, तो मैं उससे कभी प्यार कर ही नहीं सकता!",
+    movie: "Kuch Kuch Hota Hai",
+    year: 1998,
+    character: "Rahul Khanna",
+    actor: "Shah Rukh Khan",
+    role: "Hero",
+    era: "90s",
+    hint: "Rahul lecturing Ms. Braganza's college classroom on what love means.",
+    funFact: "Karan Johar's directorial debut popularized basketball and GAP sweatshirts across Indian college campuses.",
+    audioTone: { pitch: 0.98, rate: 0.95, voiceStyle: "romantic-charm" },
+    iconBg: "linear-gradient(135deg, #e11d48, #fb7185)",
+    options: ["Kuch Kuch Hota Hai", "Dil To Pagal Hai", "Mohabbatein", "Kabhi Khushi Kabhie Gham..."],
+    correctAnswer: "Kuch Kuch Hota Hai",
+    questionType: "movie"
+  },
+
+  // ================= 2000s MASALA & SWAG =================
+  {
+    id: "om-shanti-om-picture",
+    quoteEn: "Picture abhi baaki hai mere dost!",
+    quoteHi: "पिक्चर अभी बाकी है मेरे दोस्त!",
+    movie: "Om Shanti Om",
+    year: 2007,
+    character: "Om Prakash Makhija",
+    actor: "Shah Rukh Khan",
+    role: "Hero",
+    era: "2000s",
+    hint: "An iconic drunken Filmfare award speech made with a fake microphone bottle.",
+    funFact: "Om Shanti Om paid homage to Bollywood cinema history from the 1970s disco era to contemporary 2000s.",
+    audioTone: { pitch: 0.9, rate: 0.9, voiceStyle: "dramatic-passionate" },
+    iconBg: "linear-gradient(135deg, #b45309, #f59e0b)",
+    options: ["Om Shanti Om", "Main Hoon Na", "Happy New Year", "Chennai Express"],
+    correctAnswer: "Om Shanti Om",
+    questionType: "movie"
+  },
+  {
+    id: "om-shanti-om-shiddat",
+    quoteEn: "Itni shiddat se maine tumhe paane ki koshish ki hai, ki har zarre ne mujhe tumse milane ki saazish ki hai!",
+    quoteHi: "इतनी शिद्दत से मैंने तुम्हें पाने की कोशिश की है, कि हर ज़र्रे ने मुझे तुमसे मिलाने की साज़िश की है!",
+    movie: "Om Shanti Om",
+    year: 2007,
+    character: "Om Prakash Makhija",
+    actor: "Shah Rukh Khan",
+    role: "Hero",
+    era: "2000s",
+    hint: "Om expressing the magic of dreams and cosmic destiny at the retro film awards.",
+    funFact: "Inspired by Paulo Coelho's famous quote in The Alchemist ('When you want something, all the universe conspires in helping you to achieve it').",
+    audioTone: { pitch: 0.92, rate: 0.88, voiceStyle: "romantic-poetic" },
+    iconBg: "linear-gradient(135deg, #854d0e, #d97706)",
+    options: ["Om Shanti Om", "Devdas", "Veer-Zaara", "Rab Ne Bana Di Jodi"],
+    correctAnswer: "Om Shanti Om",
+    questionType: "movie"
+  },
+  {
+    id: "dabangg-thappad",
+    quoteEn: "Thappad se darr nahi lagta sahab... pyar se lagta hai!",
+    quoteHi: "थप्पड़ से डर नहीं लगता साहब... प्यार से लगता है!",
+    movie: "Dabangg",
+    year: 2010,
+    character: "Rajjo",
+    actor: "Sonakshi Sinha",
+    role: "Hero",
+    era: "2000s",
+    hint: "Sonakshi's debut punchline to Inspector Chulbul Pandey by the village potter's shop.",
+    funFact: "Sonakshi Sinha delivered this line in her audition, convincing Salman Khan immediately that she was Rajjo.",
+    audioTone: { pitch: 1.1, rate: 0.95, voiceStyle: "feisty-confident" },
+    iconBg: "linear-gradient(135deg, #c2410c, #ea580c)",
+    options: ["Dabangg", "Rowdy Rathore", "Bodyguard", "Ready"],
+    correctAnswer: "Dabangg",
+    questionType: "movie"
+  },
+  {
+    id: "dabangg-chulbul-chhed",
+    quoteEn: "Hum tum mein itne chhed karenge ki confuse ho jaoge ki saans kahan se lein aur paadhe kahan se!",
+    quoteHi: "हम तुम में इतने छेद करेंगे कि कन्फ़्यूज़ हो जाओगे कि सांस कहाँ से लें और...",
+    movie: "Dabangg",
+    year: 2010,
+    character: "Chulbul Pandey",
+    actor: "Salman Khan",
+    role: "Hero",
+    era: "2000s",
+    hint: "Chulbul Pandey wearing aviators hooked on the collar of his uniform.",
+    funFact: "The sunglasses hanging from the back collar became a national style phenomenon after Dabangg.",
+    audioTone: { pitch: 0.85, rate: 0.92, voiceStyle: "swag-cop" },
+    iconBg: "linear-gradient(135deg, #9a3412, #c2410c)",
+    options: ["Dabangg", "Singham", "Wanted", "Dabangg 2"],
+    correctAnswer: "Dabangg",
+    questionType: "movie"
+  },
+  {
+    id: "wanted-salman-commitment",
+    quoteEn: "Ek baar jo maine commitment kar di, uske baad toh main khud ki bhi nahi sunta!",
+    quoteHi: "एक बार जो मैंने कमिटमेंट कर दी, उसके बाद तो मैं खुद की भी नहीं सुनता!",
+    movie: "Wanted",
+    year: 2009,
+    character: "Radhe",
+    actor: "Salman Khan",
+    role: "Hero",
+    era: "2000s",
+    hint: "An undercover cop posing as a ruthless Mumbai contract killer.",
+    funFact: "Prabhu Deva's Wanted revived Salman Khan's box office dominance and inaugurated his blockbuster Eid streak.",
+    audioTone: { pitch: 0.88, rate: 0.9, voiceStyle: "swag-bhai" },
+    iconBg: "linear-gradient(135deg, #431407, #9a3412)",
+    options: ["Wanted", "Tere Naam", "Kick", "Ready"],
+    correctAnswer: "Wanted",
+    questionType: "movie"
+  },
+  {
+    id: "gadar-sunny-hindustan",
+    quoteEn: "Hindustan zindabad tha, zindabad hai, aur zindabad rahega!",
+    quoteHi: "हिंदुस्तान ज़िंदाबाद था, ज़िंदाबाद है, और ज़िंदाबाद रहेगा!",
+    movie: "Gadar: Ek Prem Katha",
+    year: 2001,
+    character: "Tara Singh",
+    actor: "Sunny Deol",
+    role: "Hero",
+    era: "2000s",
+    hint: "Tara Singh uprooting a handpump in Lahore while surrounded by Pakistani soldiers.",
+    funFact: "Adjusted for inflation, Gadar: Ek Prem Katha recorded over 50 million ticket admissions in Indian cinemas.",
+    audioTone: { pitch: 0.78, rate: 0.85, voiceStyle: "sunny-roar" },
+    iconBg: "linear-gradient(135deg, #15803d, #16a34a)",
+    options: ["Gadar: Ek Prem Katha", "Border", "Hero: Love Story of a Spy", "Maa Tujhhe Salaam"],
+    correctAnswer: "Gadar: Ek Prem Katha",
+    questionType: "movie"
+  },
+  {
+    id: "hera-pheri-babu-rao-khopdi",
+    quoteEn: "Khopdi tod saale ka! Khopdi tod!",
+    quoteHi: "खोपड़ी तोड़ साले का! खोपड़ी तोड़!",
+    movie: "Hera Pheri",
+    year: 2000,
+    character: "Baburao Ganpatrao Apte",
+    actor: "Paresh Rawal",
+    role: "Comic Legend",
+    era: "2000s",
+    hint: "Dhoti-clad garage owner receiving wrong phone calls for Star Fisheries.",
+    funFact: "Paresh Rawal won the Filmfare Award for Best Comedian and created Bollywood's immortal meme icon Baburao.",
+    audioTone: { pitch: 1.1, rate: 1.05, voiceStyle: "baburao-quirky" },
+    iconBg: "linear-gradient(135deg, #a16207, #eab308)",
+    options: ["Hera Pheri", "Phir Hera Pheri", "Bhagam Bhag", "Awara Paagal Deewana"],
+    correctAnswer: "Hera Pheri",
+    questionType: "movie"
+  },
+  {
+    id: "munnabhai-jaadu-jhappi",
+    quoteEn: "Bole toh ekdum jhakkaas! Tension lene ka nahi, sirf dene ka!",
+    quoteHi: "बोले तो एकदम झक्कास! टेंशन लेने का नहीं, सिर्फ़ देने का!",
+    movie: "Munna Bhai M.B.B.S.",
+    year: 2003,
+    character: "Circuit",
+    actor: "Arshad Warsi",
+    role: "Hero",
+    era: "2000s",
+    hint: "Sarkarkari doctor banne chale bhai ke saath tapori style right-hand man.",
+    funFact: "Arshad Warsi's portrayal of Circuit created a whole new genre of loyal, lovable Mumbai tapori sidekicks.",
+    audioTone: { pitch: 1.05, rate: 1.0, voiceStyle: "circuit-tapori" },
+    iconBg: "linear-gradient(135deg, #0e7490, #06b6d4)",
+    options: ["Munna Bhai M.B.B.S.", "Lage Raho Munna Bhai", "Dhamaal", "Golmaal"],
+    correctAnswer: "Munna Bhai M.B.B.S.",
+    questionType: "movie"
+  },
+  {
+    id: "3-idiots-all-is-well",
+    quoteEn: "Aal izz well! Dil ko bewakoof bana ke rakho!",
+    quoteHi: "ऑल इज़ वैल! दिल को बेवकूफ़ बना के रखो!",
+    movie: "3 Idiots",
+    year: 2009,
+    character: "Rancho",
+    actor: "Aamir Khan",
+    role: "Hero",
+    era: "2000s",
+    hint: "Engineering student at ICE tackling exams and life's stress with a chest tap.",
+    funFact: "3 Idiots became the first Indian movie to cross ₹200 Crores at the Indian box office and became a massive hit in China.",
+    audioTone: { pitch: 1.0, rate: 0.98, voiceStyle: "rancho-calm" },
+    iconBg: "linear-gradient(135deg, #0284c7, #38bdf8)",
+    options: ["3 Idiots", "Taare Zameen Par", "Rang De Basanti", "Dil Chahta Hai"],
+    correctAnswer: "3 Idiots",
+    questionType: "movie"
+  },
+  {
+    id: "singham-satakli",
+    quoteEn: "Aata maajhi satakli!",
+    quoteHi: "आता माझी सटकली!",
+    movie: "Singham",
+    year: 2011,
+    character: "Bajirao Singham",
+    actor: "Ajay Devgn",
+    role: "Hero",
+    era: "2000s",
+    hint: "An honest Maratha cop twisting the belt of goons in Goa.",
+    funFact: "The Marathi phrase literally translates to 'Now I have lost my mind/temper', giving birth to Rohit Shetty's Cop Universe.",
+    audioTone: { pitch: 0.8, rate: 0.9, voiceStyle: "angry-lion" },
+    iconBg: "linear-gradient(135deg, #b91c1c, #dc2626)",
+    options: ["Singham", "Singham Returns", "Simmba", "Gangaajal"],
+    correctAnswer: "Singham",
+    questionType: "movie"
+  },
+  {
+    id: "gangs-of-wasseypur-faizal-badla",
+    quoteEn: "Baap ka, dada ka, bhai ka, sabka badla lega re tera Faizal!",
+    quoteHi: "बाप का, दादा का, भाई का, सबका बदला लेगा रे तेरा फ़ैज़ल!",
+    movie: "Gangs of Wasseypur - Part 2",
+    year: 2012,
+    character: "Faizal Khan",
+    actor: "Nawazuddin Siddiqui",
+    role: "Hero",
+    era: "2000s",
+    hint: "A lungi-clad weed-smoking heir to the Khan family mafia empire in Dhanbad.",
+    funFact: "Nawazuddin's performance shot him straight into top-tier Bollywood stardom after over a decade of struggle.",
+    audioTone: { pitch: 0.9, rate: 0.92, voiceStyle: "gritty-mob" },
+    iconBg: "linear-gradient(135deg, #3f3f46, #71717a)",
+    options: ["Gangs of Wasseypur - Part 2", "Badlapur", "Raman Raghav 2.0", "Raees"],
+    correctAnswer: "Gangs of Wasseypur - Part 2",
+    questionType: "movie"
+  },
+
+  // ================= MODERN MASS & PAN-INDIA BLOCKBUSTERS =================
+  {
+    id: "pushpa-jhukega-nahi",
+    quoteEn: "Pushpa... Pushparaj! Main jhukega nahi, saala!",
+    quoteHi: "पुष्पा... पुष्पराज! मैं झुकेगा नहीं, साला!",
+    movie: "Pushpa: The Rise",
+    year: 2021,
+    character: "Pushpa Raj",
+    actor: "Allu Arjun (Hindi Dub: Shreyas Talpade)",
+    role: "Hero",
+    era: "Modern",
+    hint: "Hand brushing across the beard with a tilted shoulder swagger in Seshachalam forests.",
+    funFact: "Shreyas Talpade lent his distinct Hindi voice to Allu Arjun, creating unprecedented pan-India hysteria.",
+    audioTone: { pitch: 0.82, rate: 0.86, voiceStyle: "mass-swag" },
+    iconBg: "linear-gradient(135deg, #78350f, #d97706)",
+    options: ["Pushpa: The Rise", "K.G.F: Chapter 1", "Ala Vaikunthapurramuloo", "Sarrainodu"],
+    correctAnswer: "Pushpa: The Rise",
+    questionType: "movie"
+  },
+  {
+    id: "kgf-rocky-violence",
+    quoteEn: "Violence... Violence... Violence! I don't like it. I avoid! But... violence likes me! I can't avoid!",
+    quoteHi: "वायलेंस... वायलेंस... वायलेंस! आई डोंट लाइक इट... बट वायलेंस लाइक्स मी!",
+    movie: "K.G.F: Chapter 2",
+    year: 2022,
+    character: "Rocky Bhai",
+    actor: "Yash (Hindi Dub: Sachin Gole)",
+    role: "Hero",
+    era: "Modern",
+    hint: "A gold miner turned underworld overlord in a sleek grey suit addressing his enemies.",
+    funFact: "KGF Chapter 2 grossed over ₹1250 Crores worldwide, becoming the 4th highest grossing Indian film ever.",
+    audioTone: { pitch: 0.72, rate: 0.82, voiceStyle: "alpha-kgf" },
+    iconBg: "linear-gradient(135deg, #854d0e, #ca8a04)",
+    options: ["K.G.F: Chapter 2", "K.G.F: Chapter 1", "Salaar", "Kantara"],
+    correctAnswer: "K.G.F: Chapter 2",
+    questionType: "movie"
+  },
+  {
+    id: "jawan-bete-ko-haath",
+    quoteEn: "Bete ko haath lagane se pehle, baap se baat kar!",
+    quoteHi: "बेटे को हाथ लगाने से पहले, बाप से बात कर!",
+    movie: "Jawan",
+    year: 2023,
+    character: "Vikram Rathore",
+    actor: "Shah Rukh Khan",
+    role: "Hero",
+    era: "Modern",
+    hint: "A bandaged veteran soldier smoking a cigar on a Russian motorcycle taking on Kalee.",
+    funFact: "The dialogue caused stadiums of movie fans to stand and roar when Jawan released in theatres across India.",
+    audioTone: { pitch: 0.76, rate: 0.85, voiceStyle: "gravel-hero" },
+    iconBg: "linear-gradient(135deg, #7f1d1d, #b91c1c)",
+    options: ["Jawan", "Pathaan", "Dunki", "Raees"],
+    correctAnswer: "Jawan",
+    questionType: "movie"
+  },
+  {
+    id: "pathaan-kursi-ki-peti",
+    quoteEn: "Apni kursi ki peti baandh lijiye, mausam bigadne wala hai!",
+    quoteHi: "अपनी कुर्सी की पेटी बाँध लीजिए, मौसम बिगड़ने वाला है!",
+    movie: "Pathaan",
+    year: 2023,
+    character: "Pathaan",
+    actor: "Shah Rukh Khan",
+    role: "Hero",
+    era: "Modern",
+    hint: "SRK tied to a chair before exploding into high-octane combat alongside Salman Khan.",
+    funFact: "Pathaan grossed over ₹1050 Crores, ending Shah Rukh Khan's 4-year sabbatical from the big screen.",
+    audioTone: { pitch: 0.88, rate: 0.92, voiceStyle: "spy-swag" },
+    iconBg: "linear-gradient(135deg, #1e3a8a, #0284c7)",
+    options: ["Pathaan", "Jawan", "Tiger 3", "War"],
+    correctAnswer: "Pathaan",
+    questionType: "movie"
+  },
+  {
+    id: "animal-ranbir-sunai",
+    quoteEn: "Papa... sunai de raha hai? Behre nahi hain hum!",
+    quoteHi: "पापा... सुनाई दे रहा है? बहरे नहीं हैं हम!",
+    movie: "Animal",
+    year: 2023,
+    character: "Ranvijay Singh",
+    actor: "Ranbir Kapoor",
+    role: "Hero",
+    era: "Modern",
+    hint: "An unhinged son confronting his industrialist father Balbir Singh in a sprawling mansion.",
+    funFact: "Directed by Sandeep Reddy Vanga, Animal sparked endless debates and massive ₹900+ Crore box office collections.",
+    audioTone: { pitch: 0.8, rate: 0.88, voiceStyle: "intense-frenzy" },
+    iconBg: "linear-gradient(135deg, #450a0a, #7f1d1d)",
+    options: ["Animal", "Sanju", "Rockstar", "Kabir Singh"],
+    correctAnswer: "Animal",
+    questionType: "movie"
+  },
+  {
+    id: "bahubali-katappa-kyun-maara",
+    quoteEn: "Katappa ne Baahubali ko kyun maara?",
+    quoteHi: "कटप्पा ने बाहुबली को क्यों मारा?",
+    movie: "Baahubali: The Beginning",
+    year: 2015,
+    character: "Katappa",
+    actor: "Sathyaraj",
+    role: "Supporting",
+    era: "Modern",
+    hint: "The cliffhanger that had an entire nation speculating for 2 whole years until the sequel.",
+    funFact: "It became India's most ubiquitous cliffhanger in pop-culture history, sparking thousands of theories and memes.",
+    audioTone: { pitch: 0.75, rate: 0.8, voiceStyle: "solemn-warrior" },
+    iconBg: "linear-gradient(135deg, #713f12, #a16207)",
+    options: ["Baahubali: The Beginning", "Baahubali: The Conclusion", "RRR", "Magadheera"],
+    correctAnswer: "Baahubali: The Beginning",
+    questionType: "movie"
+  },
+  {
+    id: "sacred-games-bhagwan",
+    quoteEn: "Kabhi kabhi lagta hai ki apun hi bhagwan hai!",
+    quoteHi: "कभी कभी लगता है कि अपुन ही भगवान है!",
+    movie: "Sacred Games",
+    year: 2018,
+    character: "Ganesh Gaitonde",
+    actor: "Nawazuddin Siddiqui",
+    role: "Villain",
+    era: "Modern",
+    hint: "A Mumbai mafia don speaking over a phone line to police officer Sartaj Singh.",
+    funFact: "This dialogue inaugurated India's OTT revolution with Netflix's first major Indian flagship series.",
+    audioTone: { pitch: 0.85, rate: 0.88, voiceStyle: "mafia-delusion" },
+    iconBg: "linear-gradient(135deg, #27272a, #52525b)",
+    options: ["Sacred Games", "Mirzapur", "Gangs of Wasseypur", "Paatal Lok"],
+    correctAnswer: "Sacred Games",
+    questionType: "movie"
+  },
+  {
+    id: "mirzapur-kaleen-bhaiya",
+    quoteEn: "Darr ki yahi dikkat hai, ki kabhi bhi khatam ho sakta hai!",
+    quoteHi: "डर की यही दिक्कत है, कि कभी भी ख़त्म हो सकता है!",
+    movie: "Mirzapur",
+    year: 2018,
+    character: "Akhandanand Tripathi (Kaleen Bhaiya)",
+    actor: "Pankaj Tripathi",
+    role: "Villain",
+    era: "Modern",
+    hint: "The carpet kingpin of Purvanchal sitting calmly in his baithak.",
+    funFact: "Pankaj Tripathi's signature calm, stoic neck-tilt delivery made Kaleen Bhaiya one of modern Indian entertainment's greatest characters.",
+    audioTone: { pitch: 0.82, rate: 0.82, voiceStyle: "calm-don" },
+    iconBg: "linear-gradient(135deg, #3f3f46, #78716c)",
+    options: ["Mirzapur", "Gangs of Wasseypur", "Criminal Justice", "Guns & Gulaabs"],
+    correctAnswer: "Mirzapur",
+    questionType: "movie"
+  },
+  {
+    id: "uri-josh",
+    quoteEn: "How's the Josh? High, Sir!",
+    quoteHi: "हाउ इज़ द जोश? हाई, सर!",
+    movie: "Uri: The Surgical Strike",
+    year: 2019,
+    character: "Major Vihaan Shergill",
+    actor: "Vicky Kaushal",
+    role: "Hero",
+    era: "Modern",
+    hint: "An Indian Army commander firing up his commandos before crossing the Line of Control.",
+    funFact: "Vicky Kaushal won the National Film Award for Best Actor, and the slogan was quoted even in the Indian Parliament.",
+    audioTone: { pitch: 0.9, rate: 0.95, voiceStyle: "military-shout" },
+    iconBg: "linear-gradient(135deg, #14532d, #166534)",
+    options: ["Uri: The Surgical Strike", "Shershaah", "Fighter", "Border"],
+    correctAnswer: "Uri: The Surgical Strike",
+    questionType: "movie"
+  },
+  {
+    id: "stree-kal-aana",
+    quoteEn: "O Stree kal aana!",
+    quoteHi: "ओ स्त्री कल आना!",
+    movie: "Stree",
+    year: 2018,
+    character: "Vicky & Chander",
+    actor: "Rajkummar Rao / Abhishek Banerjee",
+    role: "Comic Legend",
+    era: "Modern",
+    hint: "Written on every front doorway in Chanderi with red paint to ward off the spooky female ghost.",
+    funFact: "Stree created the blockbuster horror-comedy universe in Bollywood, spawning Bhediya, Munjya, and Stree 2.",
+    audioTone: { pitch: 1.05, rate: 0.95, voiceStyle: "scared-comedy" },
+    iconBg: "linear-gradient(135deg, #581c87, #9333ea)",
+    options: ["Stree", "Stree 2", "Bhediya", "Roohi"],
+    correctAnswer: "Stree",
+    questionType: "movie"
+  }
+];
+
+// Soundboard presets for instant playback
+const SOUNDBOARD_PRESETS = [
+  {
+    id: "gabbar-kitne",
+    name: "Gabbar Singh",
+    movie: "Sholay",
+    punchline: "Kitne aadmi the?",
+    sub: "अरे ओ सांभा...",
+    bg: "from-amber-900 to-red-950",
+    sfx: "villainStab"
+  },
+  {
+    id: "mogambo-khush",
+    name: "Mogambo",
+    movie: "Mr. India",
+    punchline: "Mogambo khush hua!",
+    sub: "हाँ हाँ हाँ!",
+    bg: "from-pink-900 to-purple-950",
+    sfx: "evilLaugh"
+  },
+  {
+    id: "sunny-dhai-kilo",
+    name: "Sunny Deol",
+    movie: "Damini",
+    punchline: "Dhai kilo ka haath!",
+    sub: "उठता नहीं, उठ जाता है!",
+    bg: "from-red-900 to-orange-950",
+    sfx: "explosion"
+  },
+  {
+    id: "srk-senorita",
+    name: "Raj (SRK)",
+    movie: "DDLJ",
+    punchline: "Bade bade deshon mein...",
+    sub: "Senorita!",
+    bg: "from-rose-800 to-amber-900",
+    sfx: "mandolinChime"
+  },
+  {
+    id: "salman-commitment",
+    name: "Salman Khan",
+    movie: "Wanted",
+    punchline: "Ek baar jo maine commitment kar di...",
+    sub: "फिर मैं खुद की भी नहीं सुनता!",
+    bg: "from-blue-900 to-indigo-950",
+    sfx: "brassFanfare"
+  },
+  {
+    id: "pushpa-jhukega",
+    name: "Pushpa Raj",
+    movie: "Pushpa",
+    punchline: "Main jhukega nahi, saala!",
+    sub: "पुष्पराज...",
+    bg: "from-amber-800 to-yellow-950",
+    sfx: "dholakRoll"
+  },
+  {
+    id: "kgf-violence",
+    name: "Rocky Bhai",
+    movie: "KGF 2",
+    punchline: "Violence likes me!",
+    sub: "I can't avoid!",
+    bg: "from-stone-800 to-amber-950",
+    sfx: "dramaticGong"
+  },
+  {
+    id: "crime-master-gogo",
+    name: "Crime Master Gogo",
+    movie: "Andaz Apna Apna",
+    punchline: "Aankhein nikal kar gotiyan khelunga!",
+    sub: "आया हूँ तो कुछ लूट कर जाऊंगा!",
+    bg: "from-emerald-900 to-teal-950",
+    sfx: "comicSlide"
+  }
+];
+
+
+// === AUDIO ENGINE ===
+// ============================================================================
+// BOLLYWOOD AUDIO & CINEMA SOUND ENGINE (Web Audio API + Speech Synthesis)
+// 100% self-contained, no external audio file dependencies needed, crystal clear!
+// ============================================================================
+
+class BollywoodAudioEngine {
+  constructor() {
+    this.ctx = null;
+    this.isMuted = false;
+    this.isMusicMuted = false;
+    this.currentBgm = null;
+    this.bgmTimer = null;
+    this.activeTrack = "masala"; // masala, retro, romance, villain
+    this.analyser = null;
+    this.dataArray = null;
+    this.isSpeaking = false;
+    this.speechSynth = window.speechSynthesis || null;
+    this.hindiVoice = null;
+    this.initVoices();
+  }
+
+  init() {
+    if (!this.ctx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      this.ctx = new AudioContext();
+      this.analyser = this.ctx.createAnalyser();
+      this.analyser.fftSize = 64;
+      this.dataArray = new Uint8Array(this.analyser.frequencyBinCount);
+    }
+    if (this.ctx.state === "suspended") {
+      this.ctx.resume();
+    }
+  }
+
+  initVoices() {
+    if (!this.speechSynth) return;
+    const loadVoices = () => {
+      const voices = this.speechSynth.getVoices();
+      // Try to find a Hindi voice, or Indian English voice, or warm male/female voice
+      this.hindiVoice =
+        voices.find(v => v.lang === "hi-IN" || v.lang.startsWith("hi")) ||
+        voices.find(v => v.lang === "en-IN" || v.name.toLowerCase().includes("india")) ||
+        voices.find(v => v.lang.startsWith("en") && !v.name.includes("Zira")) ||
+        voices[0] ||
+        null;
+    };
+    loadVoices();
+    if (this.speechSynth.onvoiceschanged !== undefined) {
+      this.speechSynth.onvoiceschanged = loadVoices;
+    }
+  }
+
+  // Master Sound Effect player
+  playSfx(type) {
+    if (this.isMuted) return;
+    this.init();
+    const now = this.ctx.currentTime;
+
+    switch (type) {
+      case "seeti": // Iconic Bollywood Whistle
+        this.playSeetiWhistle(now);
+        break;
+      case "brassFanfare": // Hero entry brass
+        this.playHeroBrass(now);
+        break;
+      case "villainStab": // Mogambo / Gabbar scary sting
+        this.playVillainStab(now);
+        break;
+      case "evilLaugh": // Mogambo laughing synth
+        this.playEvilLaugh(now);
+        break;
+      case "mandolinChime": // DDLJ Mandolin notes
+        this.playMandolinChime(now);
+        break;
+      case "correct": // Cash + Fanfare
+        this.playCorrectChime(now);
+        break;
+      case "wrong": // Comedic wah-wah / buzzer
+        this.playWrongBuzz(now);
+        break;
+      case "chaChing": // Box Office collection
+        this.playCashRegister(now);
+        break;
+      case "tick": // Rapid fire countdown tick
+        this.playTick(now);
+        break;
+      case "clap": // Audience cheers
+        this.playCheerClap(now);
+        break;
+      case "dholakRoll": // Dholak thud roll
+        this.playDholakRoll(now);
+        break;
+      case "comicSlide": // Crime Master Gogo slide
+        this.playComicSlide(now);
+        break;
+      case "explosion": // Action hit
+        this.playExplosion(now);
+        break;
+      default:
+        this.playClick(now);
+    }
+  }
+
+  // 1. Bollywood "Seeti" (Audience Whistle)
+  playSeetiWhistle(startTime) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "sine";
+
+    // Whistle frequency modulation (swoop up, vibrato, chirp)
+    osc.frequency.setValueAtTime(1400, startTime);
+    osc.frequency.exponentialRampToValueAtTime(2600, startTime + 0.12);
+    osc.frequency.setValueAtTime(2500, startTime + 0.18);
+    osc.frequency.linearRampToValueAtTime(2700, startTime + 0.35);
+    osc.frequency.exponentialRampToValueAtTime(1200, startTime + 0.55);
+
+    gain.gain.setValueAtTime(0, startTime);
+    gain.gain.linearRampToValueAtTime(0.35, startTime + 0.05);
+    gain.gain.setValueAtTime(0.35, startTime + 0.35);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.55);
+
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(startTime);
+    osc.stop(startTime + 0.56);
+  }
+
+  // 2. Hero Brass Fanfare (Big Bollywood Horn)
+  playHeroBrass(startTime) {
+    const notes = [261.63, 329.63, 392.0, 523.25]; // C - E - G - C (major power)
+    notes.forEach((freq, idx) => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = "sawtooth";
+      osc.frequency.setValueAtTime(freq, startTime + idx * 0.08);
+
+      const noteStart = startTime + idx * 0.08;
+      const noteEnd = noteStart + 0.45;
+
+      gain.gain.setValueAtTime(0, noteStart);
+      gain.gain.linearRampToValueAtTime(0.2, noteStart + 0.04);
+      gain.gain.exponentialRampToValueAtTime(0.001, noteEnd);
+
+      // Lowpass filter for warm brass texture
+      const filter = this.ctx.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.setValueAtTime(1800, noteStart);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(noteStart);
+      osc.stop(noteEnd);
+    });
+  }
+
+  // 3. Villain Dramatic Stab
+  playVillainStab(startTime) {
+    const osc = this.ctx.createOscillator();
+    const oscSub = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+
+    osc.type = "sawtooth";
+    oscSub.type = "sine";
+
+    osc.frequency.setValueAtTime(110, startTime); // A2
+    osc.frequency.exponentialRampToValueAtTime(55, startTime + 0.6); // A1 drop
+
+    oscSub.frequency.setValueAtTime(55, startTime);
+    oscSub.frequency.exponentialRampToValueAtTime(27.5, startTime + 0.8);
+
+    gain.gain.setValueAtTime(0.4, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.8);
+
+    osc.connect(gain);
+    oscSub.connect(gain);
+    gain.connect(this.ctx.destination);
+
+    osc.start(startTime);
+    oscSub.start(startTime);
+    osc.stop(startTime + 0.8);
+    oscSub.stop(startTime + 0.8);
+  }
+
+  // 4. Mogambo Evil Laugh Synth
+  playEvilLaugh(startTime) {
+    const laughs = [
+      { t: 0, f: 160 },
+      { t: 0.12, f: 150 },
+      { t: 0.24, f: 140 },
+      { t: 0.38, f: 120 },
+      { t: 0.52, f: 100 }
+    ];
+
+    laughs.forEach(l => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = "triangle";
+      osc.frequency.setValueAtTime(l.f, startTime + l.t);
+      osc.frequency.exponentialRampToValueAtTime(l.f * 0.8, startTime + l.t + 0.1);
+
+      gain.gain.setValueAtTime(0.28, startTime + l.t);
+      gain.gain.exponentialRampToValueAtTime(0.001, startTime + l.t + 0.1);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start(startTime + l.t);
+      osc.stop(startTime + l.t + 0.11);
+    });
+  }
+
+  // 5. DDLJ Mandolin Chime Motif (Iconic romantic phrase)
+  playMandolinChime(startTime) {
+    const notes = [659.25, 783.99, 987.77, 880.0, 783.99]; // E5, G5, B5, A5, G5
+    notes.forEach((freq, i) => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = "triangle";
+      osc.frequency.setValueAtTime(freq, startTime + i * 0.14);
+
+      const noteStart = startTime + i * 0.14;
+      gain.gain.setValueAtTime(0, noteStart);
+      gain.gain.linearRampToValueAtTime(0.25, noteStart + 0.02);
+      gain.gain.exponentialRampToValueAtTime(0.001, noteStart + 0.35);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start(noteStart);
+      osc.stop(noteStart + 0.36);
+    });
+  }
+
+  // 6. Correct Answer Ding + Fanfare
+  playCorrectChime(startTime) {
+    const chords = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+    chords.forEach((freq, idx) => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, startTime + idx * 0.06);
+
+      const t = startTime + idx * 0.06;
+      gain.gain.setValueAtTime(0, t);
+      gain.gain.linearRampToValueAtTime(0.25, t + 0.03);
+      gain.gain.exponentialRampToValueAtTime(0.001, t + 0.4);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start(t);
+      osc.stop(t + 0.42);
+    });
+  }
+
+  // 7. Wrong Answer Wah
+  playWrongBuzz(startTime) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "sawtooth";
+    osc.frequency.setValueAtTime(220, startTime);
+    osc.frequency.linearRampToValueAtTime(140, startTime + 0.35);
+
+    gain.gain.setValueAtTime(0.2, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.4);
+
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(startTime);
+    osc.stop(startTime + 0.4);
+  }
+
+  // 8. Box Office Cash Register (Cha-Ching)
+  playCashRegister(startTime) {
+    // Bell chime
+    const bell = this.ctx.createOscillator();
+    const bellGain = this.ctx.createGain();
+    bell.type = "sine";
+    bell.frequency.setValueAtTime(1567.98, startTime); // G6
+    bellGain.gain.setValueAtTime(0.3, startTime);
+    bellGain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.6);
+    bell.connect(bellGain);
+    bellGain.connect(this.ctx.destination);
+    bell.start(startTime);
+    bell.stop(startTime + 0.6);
+
+    // Coins flutter noise
+    const bufferSize = this.ctx.sampleRate * 0.15;
+    const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+    const output = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) {
+      output[i] = Math.random() * 2 - 1;
+    }
+    const whiteNoise = this.ctx.createBufferSource();
+    whiteNoise.buffer = buffer;
+    const noiseGain = this.ctx.createGain();
+    noiseGain.gain.setValueAtTime(0.12, startTime + 0.12);
+    noiseGain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.35);
+    whiteNoise.connect(noiseGain);
+    noiseGain.connect(this.ctx.destination);
+    whiteNoise.start(startTime + 0.12);
+  }
+
+  playTick(startTime) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(800, startTime);
+    gain.gain.setValueAtTime(0.15, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.05);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(startTime);
+    osc.stop(startTime + 0.06);
+  }
+
+  playClick(startTime) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(440, startTime);
+    gain.gain.setValueAtTime(0.1, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.04);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(startTime);
+    osc.stop(startTime + 0.05);
+  }
+
+  playCheerClap(startTime) {
+    for (let i = 0; i < 4; i++) {
+      const delay = startTime + i * 0.07;
+      const bufferSize = this.ctx.sampleRate * 0.06;
+      const buffer = this.ctx.createBuffer(1, bufferSize, this.ctx.sampleRate);
+      const output = buffer.getChannelData(0);
+      for (let j = 0; j < bufferSize; j++) {
+        output[j] = Math.random() * 2 - 1;
+      }
+      const noise = this.ctx.createBufferSource();
+      noise.buffer = buffer;
+      const gain = this.ctx.createGain();
+      gain.gain.setValueAtTime(0.2, delay);
+      gain.gain.exponentialRampToValueAtTime(0.001, delay + 0.06);
+      noise.connect(gain);
+      gain.connect(this.ctx.destination);
+      noise.start(delay);
+    }
+  }
+
+  playDholakRoll(startTime) {
+    const hits = [0, 0.08, 0.14, 0.22, 0.28, 0.35];
+    hits.forEach((t, idx) => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = idx % 2 === 0 ? "sine" : "triangle";
+      osc.frequency.setValueAtTime(idx % 2 === 0 ? 120 : 280, startTime + t);
+      osc.frequency.exponentialRampToValueAtTime(50, startTime + t + 0.07);
+
+      gain.gain.setValueAtTime(0.3, startTime + t);
+      gain.gain.exponentialRampToValueAtTime(0.001, startTime + t + 0.08);
+
+      osc.connect(gain);
+      gain.connect(this.ctx.destination);
+      osc.start(startTime + t);
+      osc.stop(startTime + t + 0.09);
+    });
+  }
+
+  playComicSlide(startTime) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "sawtooth";
+    osc.frequency.setValueAtTime(600, startTime);
+    osc.frequency.exponentialRampToValueAtTime(200, startTime + 0.3);
+    gain.gain.setValueAtTime(0.2, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.35);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(startTime);
+    osc.stop(startTime + 0.36);
+  }
+
+  playExplosion(startTime) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "square";
+    osc.frequency.setValueAtTime(90, startTime);
+    osc.frequency.exponentialRampToValueAtTime(30, startTime + 0.4);
+    gain.gain.setValueAtTime(0.4, startTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, startTime + 0.5);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(startTime);
+    osc.stop(startTime + 0.51);
+  }
+
+  // ==========================================================================
+  // PROCEDURAL BOLLYWOOD BACKGROUND MUSIC GENERATOR
+  // Rhythmic Dholak beats, 70s basslines, romantic arpeggios, villain pulses
+  // ==========================================================================
+  startBgm(track = "masala") {
+    if (this.isMusicMuted) return;
+    this.stopBgm();
+    this.init();
+    this.activeTrack = track;
+
+    let step = 0;
+    const bpm = track === "masala" ? 125 : track === "retro" ? 115 : track === "romance" ? 95 : 105;
+    const stepInterval = (60 / bpm / 2) * 1000; // 16th notes / 8th notes
+
+    this.bgmTimer = setInterval(() => {
+      if (this.isMusicMuted || !this.ctx) return;
+      const now = this.ctx.currentTime;
+      this.playBgmStep(track, step % 16, now);
+      step++;
+    }, stepInterval);
+  }
+
+  stopBgm() {
+    if (this.bgmTimer) {
+      clearInterval(this.bgmTimer);
+      this.bgmTimer = null;
+    }
+  }
+
+  playBgmStep(track, step, now) {
+    switch (track) {
+      case "masala":
+        // Dholak beat + brass rhythmic pulse
+        if (step === 0 || step === 6 || step === 10) {
+          // Bass thud (Dholak Bayan)
+          this.synthDrum(now, 90, 45, 0.22, "sine");
+        }
+        if (step === 4 || step === 12) {
+          // Sharp slap (Dholak Dayan)
+          this.synthDrum(now, 380, 180, 0.16, "triangle");
+        }
+        if (step % 2 === 1) {
+          // Hi-hat / ghungroo tick
+          this.synthGhungroo(now);
+        }
+        if (step === 0 || step === 8) {
+          // Brass chord hit
+          this.synthBrassChord(now, [220, 261.6, 329.6], 0.08); // Am chord
+        }
+        break;
+
+      case "retro":
+        // 70s Funk Don / Sholay style bass groove
+        const bassNotes = [110, 110, 130.8, 146.8, 164.8, 146.8, 130.8, 110];
+        if (step % 2 === 0) {
+          const noteIndex = Math.floor(step / 2) % bassNotes.length;
+          this.synthBassNote(now, bassNotes[noteIndex], 0.15);
+        }
+        if (step === 4 || step === 12) {
+          this.synthSnare(now);
+        }
+        if (step % 2 === 1) {
+          this.synthGhungroo(now, 0.04);
+        }
+        break;
+
+      case "romance":
+        // DDLJ Mandolin acoustic pattern
+        const romanceMelody = [329.63, 392.0, 493.88, 587.33, 493.88, 392.0];
+        const melNote = romanceMelody[step % romanceMelody.length];
+        this.synthPluck(now, melNote, 0.08);
+        if (step === 0 || step === 8) {
+          this.synthWarmPad(now, 164.81, 0.4);
+        }
+        break;
+
+      case "villain":
+        // Heavy tension minor march
+        if (step === 0 || step === 8) {
+          this.synthDrum(now, 65, 30, 0.35, "sawtooth");
+          this.synthBrassChord(now, [130.8, 155.56, 196.0], 0.18); // Cm
+        }
+        if (step === 4 || step === 12) {
+          this.synthDrum(now, 110, 50, 0.2, "triangle");
+        }
+        break;
+    }
+  }
+
+  synthDrum(time, startFreq, endFreq, vol, type = "sine") {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(startFreq, time);
+    osc.frequency.exponentialRampToValueAtTime(endFreq, time + 0.09);
+
+    gain.gain.setValueAtTime(vol, time);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.1);
+
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(time);
+    osc.stop(time + 0.11);
+  }
+
+  synthGhungroo(time, vol = 0.03) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "highpass";
+    osc.frequency.setValueAtTime(4500, time);
+    gain.gain.setValueAtTime(vol, time);
+    gain.gain.exponentialRampToValueAtTime(0.0001, time + 0.03);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(time);
+    osc.stop(time + 0.04);
+  }
+
+  synthBrassChord(time, freqs, vol = 0.1) {
+    freqs.forEach(f => {
+      const osc = this.ctx.createOscillator();
+      const gain = this.ctx.createGain();
+      osc.type = "sawtooth";
+      osc.frequency.setValueAtTime(f, time);
+
+      gain.gain.setValueAtTime(vol, time);
+      gain.gain.exponentialRampToValueAtTime(0.001, time + 0.2);
+
+      const filter = this.ctx.createBiquadFilter();
+      filter.type = "lowpass";
+      filter.frequency.setValueAtTime(1400, time);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(this.ctx.destination);
+
+      osc.start(time);
+      osc.stop(time + 0.21);
+    });
+  }
+
+  synthBassNote(time, freq, vol = 0.15) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "sawtooth";
+    osc.frequency.setValueAtTime(freq, time);
+
+    const filter = this.ctx.createBiquadFilter();
+    filter.type = "lowpass";
+    filter.frequency.setValueAtTime(600, time);
+
+    gain.gain.setValueAtTime(vol, time);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.18);
+
+    osc.connect(filter);
+    filter.connect(gain);
+    gain.connect(this.ctx.destination);
+
+    osc.start(time);
+    osc.stop(time + 0.19);
+  }
+
+  synthSnare(time) {
+    this.synthDrum(time, 220, 90, 0.15, "triangle");
+  }
+
+  synthPluck(time, freq, vol = 0.1) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "triangle";
+    osc.frequency.setValueAtTime(freq, time);
+    gain.gain.setValueAtTime(vol, time);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + 0.2);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(time);
+    osc.stop(time + 0.21);
+  }
+
+  synthWarmPad(time, freq, dur = 0.5) {
+    const osc = this.ctx.createOscillator();
+    const gain = this.ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.setValueAtTime(freq, time);
+    gain.gain.setValueAtTime(0, time);
+    gain.gain.linearRampToValueAtTime(0.07, time + 0.1);
+    gain.gain.exponentialRampToValueAtTime(0.001, time + dur);
+    osc.connect(gain);
+    gain.connect(this.ctx.destination);
+    osc.start(time);
+    osc.stop(time + dur + 0.05);
+  }
+
+  // ==========================================================================
+  // DRAMATIC BOLLYWOOD SPEECH SYNTHESIS ENGINE
+  // Speaks the dialogue with cinematic actor-inspired modulation & visualizer!
+  // ==========================================================================
+  speakDialogue(dialogueObj, onStart, onEnd) {
+    if (!this.speechSynth) {
+      if (onEnd) onEnd();
+      return;
+    }
+
+    this.init();
+    this.speechSynth.cancel(); // cancel any active speech
+
+    // Play subtle cinematic chime before voice begins
+    this.playSfx("dholakRoll");
+
+    const textToSpeak = dialogueObj.quoteEn || dialogueObj.quoteHi;
+    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+
+    if (this.hindiVoice) {
+      utterance.voice = this.hindiVoice;
+    }
+
+    // Apply actor-specific tone parameters
+    const tone = dialogueObj.audioTone || { pitch: 1.0, rate: 0.9 };
+    utterance.pitch = tone.pitch || 0.95;
+    utterance.rate = tone.rate || 0.9;
+    utterance.volume = 1.0;
+
+    utterance.onstart = () => {
+      this.isSpeaking = true;
+      if (onStart) onStart();
+    };
+
+    utterance.onend = () => {
+      this.isSpeaking = false;
+      if (onEnd) onEnd();
+    };
+
+    utterance.onerror = () => {
+      this.isSpeaking = false;
+      if (onEnd) onEnd();
+    };
+
+    setTimeout(() => {
+      this.speechSynth.speak(utterance);
+    }, 180);
+  }
+
+  stopSpeech() {
+    if (this.speechSynth) {
+      this.speechSynth.cancel();
+    }
+    this.isSpeaking = false;
+  }
+
+  toggleMute() {
+    this.isMuted = !this.isMuted;
+    return this.isMuted;
+  }
+
+  toggleMusic() {
+    this.isMusicMuted = !this.isMusicMuted;
+    if (this.isMusicMuted) {
+      this.stopBgm();
+    } else {
+      this.startBgm(this.activeTrack);
+    }
+    return this.isMusicMuted;
+  }
+}
+
+const sound = new BollywoodAudioEngine();
+
+
+// === GAME ENGINE ===
+// ============================================================================
+// BOLLYWOOD DIALOGUE DHAMAKA - CORE GAME LOGIC
+// ============================================================================
+
+
+
+
+class BollywoodDialogueGame {
+  constructor() {
+    this.mode = "campaign"; // campaign, rapid, showdown, blind, soundboard
+    this.currentEra = "all";
+    this.questions = [];
+    this.currentIndex = 0;
+    this.boxOfficeCrores = 0;
+    this.seetiStreak = 0;
+    this.maxStreak = 0;
+    this.correctCount = 0;
+    this.timer = null;
+    this.timeLeft = 60;
+    this.lifelines = { cut: true, hint: true, skip: true };
+    this.canAnswer = true;
+    this.heroScore = 0;
+    this.villainScore = 0;
+
+    // Canvas confetti
+    this.canvas = document.getElementById("confettiCanvas");
+    this.ctx = this.canvas ? this.canvas.getContext("2d") : null;
+    this.particles = [];
+    this.animId = null;
+
+    this.initCanvas();
+    this.loadHighScores();
+    this.bindEvents();
+    this.renderLobby();
+  }
+
+  initCanvas() {
+    if (!this.canvas) return;
+    const resize = () => {
+      this.canvas.width = window.innerWidth;
+      this.canvas.height = window.innerHeight;
+    };
+    resize();
+    window.addEventListener("resize", resize);
+  }
+
+  loadHighScores() {
+    const saved = localStorage.getItem("filmi_best_boxoffice");
+    this.highScore = saved ? parseFloat(saved) : 0;
+  }
+
+  saveHighScore() {
+    if (this.boxOfficeCrores > this.highScore) {
+      this.highScore = this.boxOfficeCrores;
+      localStorage.setItem("filmi_best_boxoffice", this.highScore.toFixed(1));
+    }
+  }
+
+  bindEvents() {
+    // Header controls
+    document.getElementById("btnMuteSfx")?.addEventListener("click", (e) => {
+      const isMuted = sound.toggleMute();
+      e.currentTarget.textContent = isMuted ? "🔇" : "🔊";
+      e.currentTarget.title = isMuted ? "Unmute SFX" : "Mute SFX";
+    });
+
+    document.getElementById("btnToggleMusic")?.addEventListener("click", (e) => {
+      const isMusicMuted = sound.toggleMusic();
+      e.currentTarget.textContent = isMusicMuted ? "🎵❌" : "🎶";
+      e.currentTarget.title = isMusicMuted ? "Start Background Music" : "Mute Music";
+    });
+
+    document.getElementById("bgmSelect")?.addEventListener("change", (e) => {
+      sound.activeTrack = e.target.value;
+      if (!sound.isMusicMuted) {
+        sound.startBgm(e.target.value);
+      }
+    });
+
+    document.getElementById("brandLogo")?.addEventListener("click", () => {
+      sound.stopSpeech();
+      this.stopTimer();
+      this.renderLobby();
+    });
+
+    // Soundboard navigation button in header
+    document.getElementById("btnHeaderSoundboard")?.addEventListener("click", () => {
+      this.renderSoundboard();
+    });
+  }
+
+  // ==========================================================================
+  // LOBBY / MODE SELECTION
+  // ==========================================================================
+  renderLobby() {
+    this.stopTimer();
+    const stage = document.getElementById("mainStage");
+    if (!stage) return;
+
+    stage.innerHTML = `
+      <div class="lobby-view">
+        <div class="hero-billboard">
+          <span class="billboard-tag">🎬 NOW SHOWING IN THEATRES</span>
+          <h1 class="billboard-title">
+            FILMI DIALOGUE <span class="accent-text">DHAMAKA!</span>
+          </h1>
+          <p class="billboard-subtitle">
+            Guess iconic Hindi cinema dialogues from Gabbar Singh to Pushpa Raj!
+            Turn up the volume for dramatic voices, cinematic BGM, and crowd whistles!
+          </p>
+
+          <!-- Eras Selector -->
+          <div class="era-pills-row" id="eraPillsRow">
+            <button class="era-pill ${this.currentEra === "all" ? "active" : ""}" data-era="all">🌟 All Eras (50+ Hits)</button>
+            <button class="era-pill ${this.currentEra === "70s-80s" ? "active" : ""}" data-era="70s-80s">📻 70s-80s Angry Young Man</button>
+            <button class="era-pill ${this.currentEra === "90s" ? "active" : ""}" data-era="90s">❤️ 90s Romance & Revenge</button>
+            <button class="era-pill ${this.currentEra === "2000s" ? "active" : ""}" data-era="2000s">💥 2000s Masala Swag</button>
+            <button class="era-pill ${this.currentEra === "Modern" ? "active" : ""}" data-era="Modern">🔥 Modern Mass Blockbusters</button>
+          </div>
+
+          <div class="stats-strip">
+            <div class="stat-pill">
+              <span>🏆 All-Time Record:</span>
+              <strong>₹ ${this.highScore.toFixed(1)} Cr</strong>
+            </div>
+            <div class="stat-pill">
+              <span>🎭 Dialogues Loaded:</span>
+              <strong>${DIALOGUES.length}</strong>
+            </div>
+            <div class="stat-pill">
+              <span>🍿 Audio BGM:</span>
+              <strong>Procedural Web Audio</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 Game Modes Grid -->
+        <div class="modes-grid">
+          <!-- 1. Box Office Campaign -->
+          <div class="mode-card" data-mode="campaign">
+            <div>
+              <div class="mode-card-header">
+                <div class="mode-icon-box" style="background: linear-gradient(135deg, #b45309, #d97706)">
+                  🎟️
+                </div>
+                <span style="font-size: 0.75rem; color: #fbbf24; font-weight: 700;">10 ROUNDS</span>
+              </div>
+              <h3>Box Office Campaign</h3>
+              <p>Climb from Junior Artist to Bollywood Shehenshah. Use 50:50 and filmi hints to cross the ₹500 Cr Club!</p>
+            </div>
+            <button class="btn-play-mode">▶ Start Campaign</button>
+          </div>
+
+          <!-- 2. Rapid Fire Dhamaka -->
+          <div class="mode-card" data-mode="rapid">
+            <div>
+              <div class="mode-card-header">
+                <div class="mode-icon-box" style="background: linear-gradient(135deg, #b91c1c, #dc2626)">
+                  ⚡
+                </div>
+                <span style="font-size: 0.75rem; color: #f87171; font-weight: 700;">60s TIMER</span>
+              </div>
+              <h3>Rapid Fire 60s Blitz</h3>
+              <p>High-adrenaline buzzer round! Every right answer fires up the Seeti Whistle Meter for crazy combo multipliers.</p>
+            </div>
+            <button class="btn-play-mode">⚡ Play 60s Blitz</button>
+          </div>
+
+          <!-- 3. Hero vs Villain Showdown -->
+          <div class="mode-card" data-mode="showdown">
+            <div>
+              <div class="mode-card-header">
+                <div class="mode-icon-box" style="background: linear-gradient(135deg, #581c87, #9333ea)">
+                  ⚔️
+                </div>
+                <span style="font-size: 0.75rem; color: #c084fc; font-weight: 700;">TUG OF WAR</span>
+              </div>
+              <h3>Hero vs. Villain Face-Off</h3>
+              <p>Mogambo vs Amitabh, Gabbar vs Sunny Deol! Side with Heroes or Villains in this dramatic cinema battle.</p>
+            </div>
+            <button class="btn-play-mode">⚔️ Enter Showdown</button>
+          </div>
+
+          <!-- 4. Blind Audio Voice Guess -->
+          <div class="mode-card" data-mode="blind">
+            <div>
+              <div class="mode-card-header">
+                <div class="mode-icon-box" style="background: linear-gradient(135deg, #0284c7, #38bdf8)">
+                  🎧
+                </div>
+                <span style="font-size: 0.75rem; color: #7dd3fc; font-weight: 700;">AUDIO ONLY</span>
+              </div>
+              <h3>Blind Voice Line Challenge</h3>
+              <p>Text is hidden! Listen closely to the voice cadence and background score to guess who said it.</p>
+            </div>
+            <button class="btn-play-mode">🎧 Test Your Ears</button>
+          </div>
+        </div>
+
+        <!-- Soundboard Quick Entry Card -->
+        <div style="background: rgba(24, 24, 27, 0.8); border: 1px dashed var(--border-gold); border-radius: 16px; padding: 18px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: gap: 12px;">
+          <div>
+            <h4 style="color: #fbbf24; font-size: 1.1rem; font-weight: 800;">📻 Bollywood Dialogue Soundboard & Jukebox</h4>
+            <p style="color: #94a3b8; font-size: 0.85rem;">Tap instant voice lines of Gabbar, Mogambo, Sunny Deol, SRK, Baburao & Rocky Bhai!</p>
+          </div>
+          <button id="btnOpenSoundboardLobby" class="btn-play-mode" style="width: auto; padding: 8px 18px;">
+            🔊 Open Soundboard
+          </button>
+        </div>
+      </div>
+    `;
+
+    // Bind era buttons
+    stage.querySelectorAll(".era-pill").forEach(pill => {
+      pill.addEventListener("click", (e) => {
+        sound.playSfx("click");
+        stage.querySelectorAll(".era-pill").forEach(p => p.classList.remove("active"));
+        e.target.classList.add("active");
+        this.currentEra = e.target.dataset.era;
+      });
+    });
+
+    // Bind mode cards
+    stage.querySelectorAll(".mode-card").forEach(card => {
+      card.addEventListener("click", () => {
+        sound.playSfx("brassFanfare");
+        const mode = card.dataset.mode;
+        this.startMode(mode);
+      });
+    });
+
+    // Soundboard button
+    document.getElementById("btnOpenSoundboardLobby")?.addEventListener("click", () => {
+      this.renderSoundboard();
+    });
+  }
+
+  // ==========================================================================
+  // START GAME MODE
+  // ==========================================================================
+  startMode(mode) {
+    this.mode = mode;
+    this.boxOfficeCrores = 0;
+    this.seetiStreak = 0;
+    this.maxStreak = 0;
+    this.correctCount = 0;
+    this.currentIndex = 0;
+    this.lifelines = { cut: true, hint: true, skip: true };
+    this.heroScore = 0;
+    this.villainScore = 0;
+
+    // Filter questions by era if selected
+    let pool = [...DIALOGUES];
+    if (this.currentEra !== "all") {
+      pool = pool.filter(q => q.era === this.currentEra);
+      if (pool.length < 5) pool = [...DIALOGUES];
+    }
+
+    // Shuffle pool
+    this.questions = pool.sort(() => Math.random() - 0.5);
+
+    if (mode === "campaign") {
+      this.questions = this.questions.slice(0, 10);
+    } else if (mode === "showdown") {
+      this.questions = this.questions.slice(0, 10);
+    } else if (mode === "blind") {
+      this.questions = this.questions.slice(0, 8);
+    } else if (mode === "rapid") {
+      this.timeLeft = 60;
+      this.startRapidTimer();
+    }
+
+    // Start background music automatically if not muted
+    if (!sound.isMusicMuted) {
+      const track = mode === "showdown" ? "villain" : mode === "rapid" ? "masala" : "retro";
+      const sel = document.getElementById("bgmSelect");
+      if (sel) sel.value = track;
+      sound.startBgm(track);
+    }
+
+    this.renderQuestion();
+  }
+
+  startRapidTimer() {
+    this.stopTimer();
+    this.timer = setInterval(() => {
+      this.timeLeft--;
+      const dial = document.getElementById("rapidTimerValue");
+      if (dial) {
+        dial.textContent = `${this.timeLeft}s`;
+        if (this.timeLeft <= 10) {
+          dial.parentElement.style.animation = "pulseCombo 0.5s infinite";
+          sound.playSfx("tick");
+        }
+      }
+
+      if (this.timeLeft <= 0) {
+        this.stopTimer();
+        this.showGameOver("Time's Up!");
+      }
+    }, 1000);
+  }
+
+  stopTimer() {
+    if (this.timer) {
+      clearInterval(this.timer);
+      this.timer = null;
+    }
+  }
+
+  // ==========================================================================
+  // RENDER QUESTION
+  // ==========================================================================
+  renderQuestion() {
+    this.canAnswer = true;
+    const q = this.questions[this.currentIndex];
+    if (!q) {
+      this.showGameOver("Finished!");
+      return;
+    }
+
+    const stage = document.getElementById("mainStage");
+    if (!stage) return;
+
+    const isBlind = this.mode === "blind";
+    const totalQ = this.questions.length;
+    const currentQNum = this.currentIndex + 1;
+
+    // Shuffle options to ensure variety
+    const shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
+
+    stage.innerHTML = `
+      <div class="game-view">
+        <!-- Top HUD -->
+        <div class="hud-bar">
+          <div class="hud-item">
+            <span class="hud-label">${this.getModeName()}</span>
+            <span class="hud-value">${this.mode === "rapid" ? `Round ${currentQNum}` : `${currentQNum} / ${totalQ}`}</span>
+          </div>
+
+          <div class="hud-item">
+            <span class="hud-label">Box Office Collection</span>
+            <span class="hud-value hud-boxoffice">₹ ${this.boxOfficeCrores.toFixed(1)} Cr</span>
+          </div>
+
+          <!-- Seeti Combo Meter -->
+          <div class="seeti-meter-container">
+            <span class="seeti-flame ${this.seetiStreak >= 2 ? "active" : ""}">🔥</span>
+            <div class="seeti-bars">
+              <div class="seeti-step ${this.seetiStreak >= 1 ? "filled" : ""}"></div>
+              <div class="seeti-step ${this.seetiStreak >= 2 ? "filled" : ""}"></div>
+              <div class="seeti-step ${this.seetiStreak >= 3 ? "filled" : ""}"></div>
+              <div class="seeti-step ${this.seetiStreak >= 4 ? "filled" : ""}"></div>
+              <div class="seeti-step ${this.seetiStreak >= 5 ? "filled" : ""}"></div>
+            </div>
+            <span class="combo-badge ${this.seetiStreak >= 2 ? "show" : ""}">x${Math.min(this.seetiStreak, 5)} SEETI!</span>
+          </div>
+
+          ${
+            this.mode === "rapid"
+              ? `<div class="timer-dial">⏱️ <span id="rapidTimerValue">${this.timeLeft}s</span></div>`
+              : ""
+          }
+        </div>
+
+        <!-- Main Theatrical Card -->
+        <div class="theatre-card">
+          <span class="role-badge ${q.role === "Villain" ? "villain" : q.role === "Comic Legend" ? "comic" : ""}">
+            ${q.role === "Villain" ? "🔥 ICONIC VILLAIN" : q.role === "Comic Legend" ? "🎭 COMIC LEGEND" : "👑 HERO LINE"}
+          </span>
+
+          <div class="quote-container ${isBlind ? "blind-mask" : ""}" id="quoteTextContainer">
+            <span class="quote-open-mark">“</span>
+            <h2 class="quote-english">${q.quoteEn}</h2>
+            <p class="quote-hindi">${q.quoteHi}</p>
+          </div>
+
+          <!-- Listen Voice Line & Audio visualizer -->
+          <div class="audio-action-row">
+            <button class="btn-listen-dialogue" id="btnSpeakQuote">
+              <span id="speakIcon">🔊</span>
+              <span id="speakText">Listen Dramatic Voice</span>
+              <div class="visualizer-bars">
+                <div class="v-bar"></div>
+                <div class="v-bar"></div>
+                <div class="v-bar"></div>
+                <div class="v-bar"></div>
+                <div class="v-bar"></div>
+              </div>
+            </button>
+
+            ${
+              isBlind
+                ? `<button class="btn-lifeline" id="btnRevealBlind">👁️ Reveal Text Clue</button>`
+                : ""
+            }
+          </div>
+
+          <!-- Lifelines (Available in Campaign & Showdown) -->
+          ${
+            this.mode !== "rapid"
+              ? `
+            <div class="lifelines-row">
+              <button class="btn-lifeline" id="btnLifelineCut" ${!this.lifelines.cut ? "disabled" : ""}>
+                ✂️ 50-50
+              </button>
+              <button class="btn-lifeline" id="btnLifelineHint" ${!this.lifelines.hint ? "disabled" : ""}>
+                💡 Filmi Hint
+              </button>
+              <button class="btn-lifeline" id="btnLifelineSkip" ${!this.lifelines.skip ? "disabled" : ""}>
+                ⏩ Retake
+              </button>
+            </div>
+            `
+              : ""
+          }
+        </div>
+
+        <!-- 4 Option Choices -->
+        <div class="options-grid" id="optionsGrid">
+          ${shuffledOptions
+            .map(
+              (opt, idx) => `
+            <button class="option-btn" data-option="${opt}">
+              <span class="option-letter">${String.fromCharCode(65 + idx)}</span>
+              <span>${opt}</span>
+            </button>
+          `
+            )
+            .join("")}
+        </div>
+
+        <!-- Bottom Trivia / Next Scene Drawer placeholder -->
+        <div id="triviaDrawerAnchor"></div>
+      </div>
+    `;
+
+    this.bindQuestionActions(q);
+
+    // If blind mode, play voice automatically to tease!
+    if (isBlind) {
+      setTimeout(() => this.triggerVoiceSpeech(q), 300);
+    }
+  }
+
+  getModeName() {
+    switch (this.mode) {
+      case "campaign": return "Box Office";
+      case "rapid": return "Rapid Blitz";
+      case "showdown": return "Showdown";
+      case "blind": return "Blind Voice";
+      default: return "Quiz";
+    }
+  }
+
+  bindQuestionActions(q) {
+    const btnSpeak = document.getElementById("btnSpeakQuote");
+    btnSpeak?.addEventListener("click", () => {
+      this.triggerVoiceSpeech(q);
+    });
+
+    const btnReveal = document.getElementById("btnRevealBlind");
+    btnReveal?.addEventListener("click", () => {
+      document.getElementById("quoteTextContainer")?.classList.add("revealed");
+      btnReveal.disabled = true;
+      btnReveal.textContent = "Revealed!";
+    });
+
+    // Lifeline: 50-50
+    document.getElementById("btnLifelineCut")?.addEventListener("click", (e) => {
+      if (!this.lifelines.cut || !this.canAnswer) return;
+      this.lifelines.cut = false;
+      e.currentTarget.disabled = true;
+      sound.playSfx("comicSlide");
+
+      // Eliminate 2 wrong choices
+      const buttons = Array.from(document.querySelectorAll(".option-btn"));
+      const wrongButtons = buttons.filter(b => b.dataset.option !== q.correctAnswer);
+      wrongButtons.slice(0, 2).forEach(b => b.classList.add("eliminated"));
+    });
+
+    // Lifeline: Hint
+    document.getElementById("btnLifelineHint")?.addEventListener("click", (e) => {
+      if (!this.lifelines.hint || !this.canAnswer) return;
+      this.lifelines.hint = false;
+      e.currentTarget.disabled = true;
+      sound.playSfx("dholakRoll");
+      alert(`🎬 FILMI HINT:\n${q.hint}`);
+    });
+
+    // Lifeline: Skip / Retake
+    document.getElementById("btnLifelineSkip")?.addEventListener("click", (e) => {
+      if (!this.lifelines.skip || !this.canAnswer) return;
+      this.lifelines.skip = false;
+      e.currentTarget.disabled = true;
+      sound.playSfx("brassFanfare");
+      this.nextQuestion();
+    });
+
+    // Option clicks
+    document.querySelectorAll(".option-btn").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        if (!this.canAnswer) return;
+        const selected = e.currentTarget.dataset.option;
+        this.handleAnswer(selected, q, e.currentTarget);
+      });
+    });
+  }
+
+  triggerVoiceSpeech(q) {
+    const btn = document.getElementById("btnSpeakQuote");
+    const txt = document.getElementById("speakText");
+    if (btn) btn.classList.add("speaking");
+    if (txt) txt.textContent = "Speaking...";
+
+    sound.speakDialogue(
+      q,
+      () => {
+        if (btn) btn.classList.add("speaking");
+      },
+      () => {
+        if (btn) btn.classList.remove("speaking");
+        if (txt) txt.textContent = "Listen Dramatic Voice";
+      }
+    );
+  }
+
+  // ==========================================================================
+  // ANSWER PROCESSING & FEEDBACK
+  // ==========================================================================
+  handleAnswer(selected, q, btnElement) {
+    this.canAnswer = false;
+    sound.stopSpeech();
+    const isCorrect = selected === q.correctAnswer;
+
+    // Reveal blind text
+    document.getElementById("quoteTextContainer")?.classList.add("revealed");
+
+    if (isCorrect) {
+      btnElement.classList.add("correct");
+      this.correctCount++;
+      this.seetiStreak++;
+      if (this.seetiStreak > this.maxStreak) {
+        this.maxStreak = this.seetiStreak;
+      }
+
+      // Calculate Box Office earnings
+      const multiplier = Math.min(this.seetiStreak, 5);
+      const earned = (10 + (multiplier - 1) * 8.5);
+      this.boxOfficeCrores += earned;
+
+      // Hero / Villain faction score
+      if (q.role === "Villain") this.villainScore += earned;
+      else this.heroScore += earned;
+
+      // Play Whistle or Hero Brass based on streak
+      if (this.seetiStreak >= 3) {
+        sound.playSfx("seeti");
+        this.launchConfetti(40);
+      } else {
+        sound.playSfx("correct");
+      }
+      sound.playSfx("chaChing");
+
+    } else {
+      btnElement.classList.add("wrong");
+      this.seetiStreak = 0; // Reset streak
+
+      // Highlight the correct answer
+      document.querySelectorAll(".option-btn").forEach(b => {
+        if (b.dataset.option === q.correctAnswer) {
+          b.classList.add("correct");
+        }
+      });
+
+      if (q.role === "Villain") {
+        sound.playSfx("evilLaugh");
+      } else {
+        sound.playSfx("wrong");
+      }
+    }
+
+    // Update HUD
+    const hudBox = document.querySelector(".hud-boxoffice");
+    if (hudBox) hudBox.textContent = `₹ ${this.boxOfficeCrores.toFixed(1)} Cr`;
+
+    // Render Trivia Drawer
+    this.renderTriviaDrawer(q, isCorrect);
+  }
+
+  renderTriviaDrawer(q, isCorrect) {
+    const anchor = document.getElementById("triviaDrawerAnchor");
+    if (!anchor) return;
+
+    anchor.innerHTML = `
+      <div class="trivia-drawer">
+        <div class="trivia-meta">
+          <div>
+            <span class="trivia-actor">${q.character}</span> 
+            <span style="color: #94a3b8;">(${q.actor})</span>
+          </div>
+          <span class="trivia-movie">🎥 <strong>${q.movie}</strong> (${q.year})</span>
+        </div>
+        <div class="trivia-fact">
+          <strong>🍿 Filmi Trivia:</strong> ${q.funFact}
+        </div>
+        <button class="btn-next-scene" id="btnNextScene">
+          <span>${this.currentIndex + 1 >= this.questions.length ? "View Box Office Verdict 🏆" : "Agla Scene / Next Dialogue ▶"}</span>
+        </button>
+      </div>
+    `;
+
+    document.getElementById("btnNextScene")?.addEventListener("click", () => {
+      sound.playSfx("click");
+      this.nextQuestion();
+    });
+
+    // In Rapid mode, automatically jump to next after 1.8 seconds!
+    if (this.mode === "rapid") {
+      setTimeout(() => {
+        if (this.timeLeft > 0) {
+          this.nextQuestion();
+        }
+      }, 1400);
+    }
+  }
+
+  nextQuestion() {
+    this.currentIndex++;
+    if (this.currentIndex < this.questions.length) {
+      this.renderQuestion();
+    } else {
+      this.showGameOver("Completed!");
+    }
+  }
+
+  // ==========================================================================
+  // GAME OVER / CERTIFICATE SCREEN
+  // ==========================================================================
+  showGameOver(reason = "") {
+    this.stopTimer();
+    sound.stopSpeech();
+    this.saveHighScore();
+
+    // Box office verdict logic
+    let verdict = "FLOP";
+    let verdictClass = "";
+    let playerTitle = "Junior Artist";
+    let verdictColor = "#ef4444";
+
+    if (this.boxOfficeCrores >= 500) {
+      verdict = "ALL-TIME RECORD BREAKER";
+      verdictClass = "blockbuster";
+      playerTitle = "👑 Bollywood Shehenshah";
+      verdictColor = "#fbbf24";
+      sound.playSfx("brassFanfare");
+      sound.playSfx("seeti");
+      this.launchConfetti(100);
+    } else if (this.boxOfficeCrores >= 250) {
+      verdict = "SUPER HIT";
+      verdictClass = "blockbuster";
+      playerTitle = "🌟 Superstar";
+      verdictColor = "#fbbf24";
+      sound.playSfx("brassFanfare");
+      this.launchConfetti(70);
+    } else if (this.boxOfficeCrores >= 100) {
+      verdict = "SEMI-HIT";
+      verdictClass = "hit";
+      playerTitle = "🎬 Dialogue King";
+      verdictColor = "#22c55e";
+      sound.playSfx("correct");
+    } else {
+      verdict = "DISASTER";
+      verdictClass = "";
+      playerTitle = "🍿 Samosa Seller";
+      sound.playSfx("wrong");
+    }
+
+    const accuracy = this.questions.length > 0 
+      ? Math.round((this.correctCount / Math.min(this.currentIndex + 1, this.questions.length)) * 100) 
+      : 0;
+
+    const modal = document.createElement("div");
+    modal.className = "gameover-modal-backdrop";
+    modal.innerHTML = `
+      <div class="scorecard-poster">
+        <div class="scorecard-header-lights"></div>
+
+        <div class="verdict-stamp ${verdictClass}">${verdict}</div>
+        <h2 class="player-title">${playerTitle}</h2>
+        <p class="player-subtitle">${reason || "Box Office Run Completed"}</p>
+
+        <div class="scorecard-stats-grid">
+          <div class="scorecard-stat-box">
+            <div class="val">₹ ${this.boxOfficeCrores.toFixed(1)} Cr</div>
+            <div class="lbl">Total Earnings</div>
+          </div>
+          <div class="scorecard-stat-box">
+            <div class="val">${accuracy}%</div>
+            <div class="lbl">Accuracy</div>
+          </div>
+          <div class="scorecard-stat-box">
+            <div class="val">${this.maxStreak}x</div>
+            <div class="lbl">Max Seeti Streak</div>
+          </div>
+        </div>
+
+        ${
+          this.mode === "showdown"
+            ? `
+          <div style="background: rgba(255,255,255,0.05); padding: 10px; border-radius: 10px; margin-bottom: 16px; font-size: 0.85rem;">
+            <strong>Faction Battle:</strong> Hero: ₹${this.heroScore.toFixed(0)} Cr vs Villain: ₹${this.villainScore.toFixed(0)} Cr
+          </div>`
+            : ""
+        }
+
+        <div class="scorecard-actions">
+          <button class="btn-share" id="btnCopyShareText">
+            📋 Copy Filmi Scorecard
+          </button>
+          <button class="btn-play-again" id="btnRestartGame">
+            🔄 Play Again / Lobby
+          </button>
+          <button class="btn-lifeline" id="btnGoToSoundboard" style="padding: 10px; justify-content: center;">
+            📻 Open Bollywood Soundboard
+          </button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+
+    modal.querySelector("#btnRestartGame")?.addEventListener("click", () => {
+      sound.playSfx("click");
+      modal.remove();
+      this.renderLobby();
+    });
+
+    modal.querySelector("#btnGoToSoundboard")?.addEventListener("click", () => {
+      sound.playSfx("click");
+      modal.remove();
+      this.renderSoundboard();
+    });
+
+    modal.querySelector("#btnCopyShareText")?.addEventListener("click", (e) => {
+      const shareText = `🎬 FILMI DIALOGUE DHAMAKA 🍿\nBox Office Verdict: ${verdict} (${playerTitle})\nTotal Collection: ₹${this.boxOfficeCrores.toFixed(1)} Cr!\nMax Seeti Whistle Streak: ${this.maxStreak}x | Accuracy: ${accuracy}%\nCan you beat my Bollywood knowledge? 🔥`;
+      navigator.clipboard?.writeText(shareText);
+      e.currentTarget.textContent = "✅ Copied to Clipboard!";
+      sound.playSfx("chaChing");
+    });
+  }
+
+  // ==========================================================================
+  // BOLLYWOOD SOUNDBOARD & JUKEBOX VIEW
+  // ==========================================================================
+  renderSoundboard() {
+    this.stopTimer();
+    sound.stopSpeech();
+    const stage = document.getElementById("mainStage");
+    if (!stage) return;
+
+    stage.innerHTML = `
+      <div class="lobby-view">
+        <div class="hero-billboard" style="padding: 24px 20px;">
+          <span class="billboard-tag">📻 LIVE SOUNDBOARD & JUKEBOX</span>
+          <h2 class="billboard-title" style="font-size: 2rem;">
+            BOLLYWOOD <span class="accent-text">VOICE PUNCHLINES</span>
+          </h2>
+          <p class="billboard-subtitle" style="margin-bottom: 12px;">
+            Tap any legend below to hear their signature voice line with dramatic audio effects and music!
+          </p>
+          <button class="btn-play-mode" id="btnBackToLobby" style="max-width: 200px; margin: 0 auto;">
+            ◀ Back to Game Lobby
+          </button>
+        </div>
+
+        <div class="soundboard-grid">
+          ${SOUNDBOARD_PRESETS.map(preset => `
+            <div class="soundboard-pad" data-id="${preset.id}">
+              <div>
+                <div class="pad-name">${preset.name}</div>
+                <div class="pad-movie">🎥 ${preset.movie}</div>
+              </div>
+              <div>
+                <div class="pad-punchline">"${preset.punchline}"</div>
+                <div style="font-size: 0.7rem; color: #fbbf24; margin-top: 4px;">${preset.sub}</div>
+              </div>
+            </div>
+          `).join("")}
+        </div>
+      </div>
+    `;
+
+    document.getElementById("btnBackToLobby")?.addEventListener("click", () => {
+      sound.playSfx("click");
+      this.renderLobby();
+    });
+
+    // Soundboard pads click handler
+    stage.querySelectorAll(".soundboard-pad").forEach(pad => {
+      pad.addEventListener("click", () => {
+        const id = pad.dataset.id;
+        const preset = SOUNDBOARD_PRESETS.find(p => p.id === id);
+        if (!preset) return;
+
+        // Play SFX
+        if (preset.sfx) sound.playSfx(preset.sfx);
+
+        // Find dialogue entry or construct speech
+        const matchedDialogue = DIALOGUES.find(d => d.character.toLowerCase().includes(preset.name.toLowerCase().split(" ")[0])) || {
+          quoteEn: preset.punchline,
+          audioTone: { pitch: 0.8, rate: 0.85 }
+        };
+
+        pad.style.borderColor = "#fbbf24";
+        pad.style.transform = "scale(0.96)";
+        setTimeout(() => {
+          pad.style.transform = "";
+        }, 150);
+
+        sound.speakDialogue(matchedDialogue);
+      });
+    });
+  }
+
+  // ==========================================================================
+  // CANVAS CONFETTI FX
+  // ==========================================================================
+  launchConfetti(count = 50) {
+    if (!this.ctx) return;
+    const colors = ["#fbbf24", "#f59e0b", "#ef4444", "#3b82f6", "#22c55e", "#a855f7"];
+
+    for (let i = 0; i < count; i++) {
+      this.particles.push({
+        x: Math.random() * this.canvas.width,
+        y: -10,
+        r: Math.random() * 6 + 4,
+        d: Math.random() * count,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        tilt: Math.floor(Math.random() * 10) - 10,
+        tiltAngleIncremental: Math.random() * 0.07 + 0.05,
+        tiltAngle: 0,
+        vy: Math.random() * 3 + 2,
+        vx: (Math.random() - 0.5) * 4
+      });
+    }
+
+    if (!this.animId) {
+      this.renderConfetti();
+    }
+  }
+
+  renderConfetti() {
+    if (!this.ctx) return;
+    this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+    for (let i = 0; i < this.particles.length; i++) {
+      const p = this.particles[i];
+      p.tiltAngle += p.tiltAngleIncremental;
+      p.y += p.vy;
+      p.x += p.vx;
+      p.tilt = Math.sin(p.tiltAngle) * 15;
+
+      this.ctx.beginPath();
+      this.ctx.lineWidth = p.r / 2;
+      this.ctx.strokeStyle = p.color;
+      this.ctx.moveTo(p.x + p.tilt + p.r / 4, p.y);
+      this.ctx.lineTo(p.x + p.tilt, p.y + p.tilt + p.r / 4);
+      this.ctx.stroke();
+
+      if (p.y > this.canvas.height) {
+        this.particles.splice(i, 1);
+        i--;
+      }
+    }
+
+    if (this.particles.length > 0) {
+      this.animId = requestAnimationFrame(() => this.renderConfetti());
+    } else {
+      cancelAnimationFrame(this.animId);
+      this.animId = null;
+    }
+  }
+}
+
+// Instantiate on DOM load
+window.addEventListener("DOMContentLoaded", () => {
+  window.filmiGame = new BollywoodDialogueGame();
+});
+
+
+</script>
+</body>
+</html>

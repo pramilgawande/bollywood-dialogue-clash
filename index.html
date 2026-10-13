@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filmi Dialogue Dhamaka - The Bollywood Dialogue Clash</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+</head>
+<body>
+  <!-- Marquee Bulb Accent Line -->
+  <div class="marquee-border"></div>
+
+  <!-- App Header -->
+  <header class="app-header">
+    <div class="brand-container" id="brandLogo">
+      <span class="brand-clapper">🎬</span>
+      <div>
+        <div class="brand-title">Filmi Dialogue Dhamaka</div>
+      </div>
+      <span class="brand-tag">HERO VS VILLAIN</span>
+    </div>
+
+    <!-- Live Audio & Navigation Controls -->
+    <div class="header-controls">
+      <!-- BGM Selector -->
+      <select class="bgm-select" id="bgmSelect" title="Select Bollywood Background Music">
+        <option value="masala">🥁 Masala Dholak</option>
+        <option value="retro">📻 70s Retro Funk</option>
+        <option value="romance">🎸 DDLJ Mandolin</option>
+        <option value="villain">⚡ Villain March</option>
+      </select>
+
+      <!-- Music Toggle -->
+      <button class="btn-icon" id="btnToggleMusic" title="Toggle Background Music">
+        🎶
+      </button>
+
+      <!-- SFX Toggle -->
+      <button class="btn-icon" id="btnMuteSfx" title="Toggle Sound Effects">
+        🔊
+      </button>
+
+      <!-- Soundboard Direct Button -->
+      <button class="btn-icon" id="btnHeaderSoundboard" title="Open Bollywood Soundboard">
+        📻
+      </button>
+    </div>
+  </header>
+
+  <!-- Canvas for Confetti & Special FX -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Cinema Projector Glow Effect -->
+  <div class="projector-glow"></div>
+
+  <!-- Main Game Stage (Dynamic Screens Rendered via game.js) -->
+  <main class="main-stage" id="mainStage">
+    <!-- Populated by game.js: Lobby / Quiz / Soundboard / Certificate -->
+  </main>
+
+  <!-- Modular Scripts -->
+  <script type="module" src="game.js"></script>
+</body>
+</html>
